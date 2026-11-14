@@ -1,184 +1,321 @@
-<!doctype html>
-<html lang="ar" dir="rtl">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0b7285">
-  <title>أكاديمية كريم البرديسي | التدريب والتطوير المهني</title>
-  <meta name="description" content="أكاديمية كريم البرديسي للتدريب والتطوير المهني والخدمات المحاسبية والضريبية.">
-  <style>
-    :root{--navy:#102a43;--teal:#087e8b;--cyan:#dff6f5;--gold:#f2b544;--ink:#243b53;--muted:#627d98;--bg:#f5f9fc;--white:#fff;--line:#e3edf3;--coral:#ef8354}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.8}
-    a{color:inherit;text-decoration:none}.container{width:min(1120px,92%);margin:auto}
-    header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:13px 0;flex-wrap:wrap}
-    .brand{font-weight:800;color:var(--navy);font-size:1.08rem}.brand small{display:block;color:var(--teal);font-size:.75rem;font-weight:600}
-    nav{display:flex;gap:16px;flex-wrap:wrap;font-size:.92rem}nav a:hover{color:var(--teal)}
-    .btn{display:inline-block;border:0;border-radius:12px;padding:11px 18px;background:var(--teal);color:white;font-weight:700;cursor:pointer;font:inherit}
-    .btn.secondary{background:#e8f5f5;color:var(--teal)}.btn.gold{background:var(--gold);color:#3e2b08}
-    .hero{padding:70px 0 58px;background:linear-gradient(135deg,#e9f8f7 0%,#f7fbff 60%,#fff4df 100%)}
-    .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:35px;align-items:center}
-    h1{font-size:clamp(2rem,4vw,3.35rem);line-height:1.35;color:var(--navy);margin:10px 0 18px}
-    h2{color:var(--navy);font-size:1.8rem;margin:0 0 12px}.lead{font-size:1.1rem;color:#486581;max-width:680px}
-    .tag{display:inline-block;background:#fff;border:1px solid #cde9e7;color:var(--teal);padding:5px 12px;border-radius:99px;font-size:.85rem;font-weight:700}
-    .hero-card,.card,.panel{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:0 10px 30px #183b5510}
-    .hero-card{border-top:5px solid var(--gold)}.hero-card strong{font-size:1.2rem;color:var(--navy)}
-    section{padding:58px 0}.section-head{margin-bottom:24px}.section-head p{color:var(--muted);margin:0}
-    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-    .card h3{margin:0 0 8px;color:var(--teal)}.card p{color:var(--muted);margin:0 0 14px}
-    .icon{width:42px;height:42px;display:grid;place-items:center;background:var(--cyan);border-radius:13px;font-size:1.3rem;margin-bottom:12px}
-    .soft{background:#edf7fa}.service-list{padding-right:20px;margin:8px 0;color:var(--muted)}
-    .note{border-right:4px solid var(--gold);background:#fff8e8;padding:13px 16px;border-radius:10px;color:#6b4e16}
-    .auth-wrap{display:grid;grid-template-columns:1fr 1fr;gap:18px}.field{display:block;width:100%;padding:12px;border:1px solid #cfdae3;border-radius:10px;font:inherit;margin:6px 0 12px;background:white}
-    label{font-weight:700;font-size:.92rem}.status{margin-top:10px;padding:10px;border-radius:10px;background:#eef8f7;color:#176b62;display:none}
-    footer{background:var(--navy);color:#e6f1f5;padding:30px 0}footer p{margin:4px 0;color:#c5d5e0}
-    .whatsapp{position:fixed;bottom:18px;left:18px;background:#168b55;color:#fff;border-radius:99px;padding:11px 17px;font-weight:700;box-shadow:0 6px 20px #0002;z-index:6}
-    @media(max-width:800px){.hero-grid,.grid3,.grid2,.auth-wrap{grid-template-columns:1fr}.nav{align-items:flex-start}nav{gap:10px}.hero{padding:45px 0}}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أكاديمية كريم البرديسي | للتدريب والخدمات المحاسبية والضريبية</title>
+    
+    <!-- Google Fonts: Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #F0FDFA; /* خلفية تركواز فاتح جداً ومريحة للعين */
+            color: #1E293B;
+        }
+        .card-hover {
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -8px rgba(13, 148, 136, 0.18);
+        }
+    </style>
 </head>
-<body>
-<header>
-  <div class="container nav">
-    <a class="brand" href="#home">أكاديمية كريم البرديسي<small>للتدريب والتطوير المهني</small></a>
-    <nav aria-label="التنقل الرئيسي">
-      <a href="#training">التدريب</a><a href="#tax">الخدمات المحاسبية والضريبية</a><a href="#products">منتجات Excel</a><a href="#students">بوابة الطلاب</a>
-    </nav>
-    <a class="btn secondary" href="https://wa.me/201145970140" target="_blank" rel="noopener">تواصل معنا</a>
-  </div>
-</header>
+<body class="antialiased selection:bg-teal-200 selection:text-teal-900">
 
-<main id="home">
-  <div class="hero">
-    <div class="container hero-grid">
-      <div>
-        <span class="tag">التدريب • المحاسبة • الخدمات الضريبية</span>
-        <h1>طوّر مهاراتك، ونظّم أعمالك بثقة واحتراف</h1>
-        <p class="lead">منصة واحدة تجمع التدريب العملي على Excel والتطوير المهني، إلى جانب خدمات المحاسبة والضرائب للأفراد والمنشآت.</p>
-        <a class="btn" href="#training">اكتشف البرامج التدريبية</a>
-        <a class="btn gold" href="#tax">استعرض الخدمات</a>
-      </div>
-      <div class="hero-card">
-        <strong>تعلّم بذكاء، تطوّر باحتراف</strong>
-        <p>مسارات تدريبية منظمة، ومواد تطبيقية، وخدمات مهنية تُقدَّم وفق احتياجات كل عميل.</p>
-        <p class="note">يتم الاتفاق على تفاصيل الخدمات والاشتراك من خلال التواصل المباشر. لا يوجد دفع إلكتروني في هذه المرحلة.</p>
-      </div>
-    </div>
-  </div>
+    <!-- ==================== HEADER / NAVBAR ==================== -->
+    <header class="sticky top-0 z-40 bg-teal-50/95 backdrop-blur-md border-b border-teal-200/80 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- Logo & Brand -->
+                <a href="#top" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-teal-600 to-emerald-700 text-white flex items-center justify-center shadow-md shadow-teal-600/20 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-file-excel text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="block text-lg font-extrabold text-slate-800 leading-tight">
+                            أكاديمية كريم البرديسي
+                        </span>
+                        <span class="block text-xs font-semibold text-teal-700">
+                            للتدريب المهني والخدمات المحاسبية والضريبية
+                        </span>
+                    </div>
+                </a>
 
-  <section id="training">
-    <div class="container">
-      <div class="section-head"><h2>قطاع التدريب والتطوير المهني</h2><p>ابدأ من مستواك، وتدرّج في التعلم من الأساسيات إلى التطبيقات المتقدمة.</p></div>
-      <div class="grid3">
-        <article class="card"><div class="icon">📗</div><h3>Excel التأسيسي</h3><p>التعرف على بيئة Excel، إدخال البيانات، تنسيق الجداول، والعمليات الأساسية.</p><a class="btn secondary" href="https://wa.me/201145970140?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%85%D8%B3%D8%AA%D9%88%D9%89%20Excel%20%D8%A7%D9%84%D8%AA%D8%A3%D8%B3%D9%8A%D8%B3%D9%8A" target="_blank" rel="noopener">استفسر عن المستوى</a></article>
-        <article class="card"><div class="icon">📘</div><h3>Excel المتوسط</h3><p>الدوال ومعالجة النصوص والتواريخ، البحث عن البيانات، وأدوات تنظيم وتحليل البيانات.</p><a class="btn secondary" href="https://wa.me/201145970140?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%85%D8%B3%D8%AA%D9%88%D9%89%20Excel%20%D8%A7%D9%84%D9%85%D8%AA%D9%88%D8%B3%D8%B7" target="_blank" rel="noopener">استفسر عن المستوى</a></article>
-        <article class="card"><div class="icon">📙</div><h3>Excel المتقدم</h3><p>تطبيقات عملية متقدمة وتقارير ولوحات متابعة، وفق المنهج التدريبي المعتمد.</p><a class="btn secondary" href="https://wa.me/201145970140?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%85%D8%B3%D8%AA%D9%88%D9%89%20Excel%20%D8%A7%D9%84%D9%85%D8%AA%D9%82%D8%AF%D9%85" target="_blank" rel="noopener">استفسر عن المستوى</a></article>
-      </div>
-    </div>
-  </section>
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center gap-7 text-sm font-bold text-slate-700">
+                    <a href="#about" class="hover:text-teal-700 transition-colors">عن المشروع</a>
+                    <a href="#levels" class="hover:text-teal-700 transition-colors">كورسات Excel</a>
+                    <a href="#products" class="hover:text-teal-700 transition-colors">منتجات Excel</a>
+                    <a href="#accounting" class="hover:text-cyan-700 transition-colors flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-cyan-600"></span>
+                        الخدمات الضريبية والمحاسبية
+                    </a>
+                    <a href="#future" class="hover:text-teal-700 transition-colors">مسارات قادمة</a>
+                </nav>
 
-  <section id="tax" class="soft">
-    <div class="container">
-      <div class="section-head"><h2>قطاع الخدمات المحاسبية والضريبية</h2><p>خدمات مهنية يتم تحديد نطاقها ومستنداتها المطلوبة مع العميل قبل البدء.</p></div>
-      <div class="grid2">
-        <article class="card"><div class="icon">🧾</div><h3>الفواتير الضريبية الإلكترونية</h3><p>المساعدة في إعداد وإصدار الفواتير الإلكترونية ومتابعة متطلباتها وفق حالة المنشأة.</p></article>
-        <article class="card"><div class="icon">📊</div><h3>الإقرار الضريبي الشهري – نموذج 10</h3><p>المساعدة في تجهيز بيانات الإقرار ومراجعتها تمهيدًا للتقديم وفق المستندات المتاحة.</p></article>
-        <article class="card"><div class="icon">📅</div><h3>الإقرار الضريبي السنوي</h3><p>تنظيم البيانات والمستندات اللازمة لإعداد الإقرار السنوي ومراجعته.</p></article>
-        <article class="card"><div class="icon">⬇️</div><h3>تحميل الفواتير الإلكترونية</h3><p>المساعدة في استخراج وتنظيم الفواتير الإلكترونية وحفظها للرجوع إليها.</p></article>
-      </div>
-      <p style="margin-top:18px"><a class="btn" href="https://wa.me/201145970140?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D8%A7%D9%84%D9%85%D8%AD%D8%A7%D8%B3%D8%A8%D9%8A%D8%A9%20%D9%88%D8%A7%D9%84%D8%B6%D8%B1%D9%8A%D8%A8%D9%8A%D8%A9" target="_blank" rel="noopener">اطلب استشارة عبر واتساب</a></p>
-    </div>
-  </section>
+                <!-- Action Buttons -->
+                <div class="flex items-center gap-3">
+                    <button type="button" onclick="openAuthModal()" class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-bold text-teal-800 bg-white hover:bg-teal-100 border border-teal-300 shadow-xs transition-colors cursor-pointer">
+                        <i class="fa-solid fa-user-graduate"></i>
+                        <span>بوابة الطلاب</span>
+                    </button>
 
-  <section id="products">
-    <div class="container">
-      <div class="section-head"><h2>منتجات Excel</h2><p>مساحة لعرض الشيتات والبرامج المساعدة التي يتم تجهيزها وبيعها.</p></div>
-      <div class="grid3">
-        <article class="card"><div class="icon">📑</div><h3>شيتات Excel جاهزة</h3><p>نماذج عملية قابلة للتخصيص للاستخدام الإداري والمحاسبي.</p></article>
-        <article class="card"><div class="icon">⚙️</div><h3>برامج Excel</h3><p>أدوات مبنية على Excel لتسهيل المتابعة وتنظيم البيانات.</p></article>
-        <article class="card"><div class="icon">💬</div><h3>طلب منتج مخصص</h3><p>تواصل معنا لشرح احتياجك ومعرفة إمكانية تجهيز نموذج مناسب.</p><a class="btn secondary" href="https://wa.me/201145970140?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B7%D9%84%D8%A8%20%D9%85%D9%86%D8%AA%D8%AC%20Excel%20%D9%85%D8%AE%D8%B5%D8%B5" target="_blank" rel="noopener">اطلب عبر واتساب</a></article>
-      </div>
-    </div>
-  </section>
+                    <a href="https://wa.me/201145970140?text=السلام%20عليكم%20أستاذ%20كريم،%20حابب%20أستفسر%20عن%20خدمات%20الأكاديمية%20والمكتب" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-bold text-white bg-teal-600 hover:bg-teal-700 shadow-sm transition-all">
+                        <i class="fa-brands fa-whatsapp text-base"></i>
+                        <span>تواصل معنا</span>
+                    </a>
 
-  <section id="students" class="soft">
-    <div class="container">
-      <div class="section-head"><h2>بوابة الطلاب</h2><p>واجهة أولية للتسجيل والدخول. يلزم إعداد مفاتيح Supabase قبل تفعيلها.</p></div>
-      <div class="note" style="margin-bottom:18px">تنبيه: التسجيل لن يمنح الطالب المواد تلقائيًا. يجب اعتماد الاشتراك من الإدارة بعد الاتفاق والتأكد من السداد.</div>
-      <div class="auth-wrap">
-        <div class="panel">
-          <h3>إنشاء حساب طالب</h3>
-          <form id="signupForm">
-            <label for="fullName">الاسم بالكامل</label><input class="field" id="fullName" required autocomplete="name">
-            <label for="signupEmail">البريد الإلكتروني</label><input class="field" id="signupEmail" type="email" required autocomplete="email">
-            <label for="signupPassword">كلمة المرور</label><input class="field" id="signupPassword" type="password" minlength="8" required autocomplete="new-password">
-            <button class="btn" type="submit">إنشاء الحساب</button>
-          </form><div class="status" id="signupStatus" role="status"></div>
+                    <button type="button" onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-lg text-teal-800 hover:bg-teal-100 cursor-pointer" aria-label="القائمة">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
         </div>
-        <div class="panel">
-          <h3>تسجيل الدخول</h3>
-          <form id="loginForm">
-            <label for="loginEmail">البريد الإلكتروني</label><input class="field" id="loginEmail" type="email" required autocomplete="email">
-            <label for="loginPassword">كلمة المرور</label><input class="field" id="loginPassword" type="password" required autocomplete="current-password">
-            <button class="btn" type="submit">دخول</button>
-            <button class="btn secondary" id="logoutBtn" type="button" style="margin-right:8px">تسجيل الخروج</button>
-          </form><div class="status" id="loginStatus" role="status"></div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-teal-50 border-t border-teal-200 px-4 pt-3 pb-5 space-y-2 shadow-lg">
+            <a href="#about" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-sm font-bold text-slate-700 hover:bg-teal-100 hover:text-teal-800">عن المشروع</a>
+            <a href="#levels" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-sm font-bold text-slate-700 hover:bg-teal-100 hover:text-teal-800">كورسات Excel</a>
+            <a href="#products" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-sm font-bold text-slate-700 hover:bg-teal-100 hover:text-teal-800">معرض منتجات Excel</a>
+            <a href="#accounting" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-sm font-bold text-cyan-800 hover:bg-cyan-100">الخدمات المحاسبية والضريبية</a>
+            <a href="#future" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-sm font-bold text-slate-700 hover:bg-teal-100 hover:text-teal-800">مسارات قادمة</a>
+            <div class="pt-2 border-t border-teal-200">
+                <button type="button" onclick="toggleMobileMenu(); openAuthModal();" class="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-bold text-teal-800 bg-white border border-teal-300 cursor-pointer">
+                    <i class="fa-solid fa-user-graduate"></i>
+                    <span>دخول بوابة الطلاب</span>
+                </button>
+            </div>
         </div>
-      </div>
-      <p id="configNotice" class="note" style="margin-top:18px">لم يتم إعداد اتصال Supabase بعد. أدخل عنوان المشروع والمفتاح العام (anon/publishable) في إعدادات هذا الملف كما هو موضح في دليل الاستخدام.</p>
-    </div>
-  </section>
-</main>
+    </header>
 
-<footer><div class="container"><strong>أكاديمية كريم البرديسي للتدريب والتطوير المهني</strong><p>تعلّم بذكاء، تطوّر باحتراف</p><p>للاستفسار: 01145970140</p><p>© جميع الحقوق محفوظة</p></div></footer>
-<a class="whatsapp" href="https://wa.me/201145970140" target="_blank" rel="noopener">واتساب</a>
+    <!-- ==================== HERO SECTION ==================== -->
+    <section id="top" class="relative overflow-hidden bg-gradient-to-b from-teal-100/70 via-emerald-50/60 to-teal-50 pt-12 pb-20 lg:pt-20 lg:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Right Content (Text) -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-teal-50 border border-teal-300 shadow-xs text-teal-900 text-xs sm:text-sm font-bold">
+                        <span class="w-2.5 h-2.5 rounded-full bg-teal-600 animate-pulse"></span>
+                        <span>تعلّم بذكاء، تطوّر باحتراف — موقع واحد وهوية متكاملة</span>
+                    </div>
 
-<script type="module">
-  // ضع بيانات مشروع Supabase هنا بعد مراجعة دليل README_AR.md.
-  const SUPABASE_URL = "ضع_رابط_مشروعك_هنا";
-  const SUPABASE_ANON_KEY = "ضع_المفتاح_العام_هنا";
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-[1.3]">
+                        منصة متكاملة للتدريب العملي على <span class="text-teal-700">Excel</span> والخدمات <span class="text-cyan-700">المحاسبية والضريبية</span>
+                    </h1>
 
-  const signupStatus = document.getElementById("signupStatus");
-  const loginStatus = document.getElementById("loginStatus");
-  const notice = document.getElementById("configNotice");
-  const show = (el, msg) => { el.textContent = msg; el.style.display = "block"; };
+                    <p class="text-base sm:text-lg text-slate-700 leading-relaxed max-w-2xl">
+                        نجمع بين التأهيل العملي للمحاسبين والإداريين عبر برامج تدريبية تطبيقية من الصفر للاحتراف، وبين تقديم حلول محاسبية وضريبية متكاملة للشركات والأفراد تحت إشراف مهني متخصص.
+                    </p>
 
-  let supabase = null;
-  const configured = SUPABASE_URL.startsWith("https://") && !SUPABASE_ANON_KEY.includes("ضع_");
-  if (configured) {
-    try {
-      const { createClient } = await import("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm");
-      supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-      notice.textContent = "تم إعداد بيانات الاتصال. جرّب التسجيل بحساب اختباري بعد ضبط إعدادات المصادقة.";
-      notice.style.background = "#eef8f7";
-    } catch (e) { show(notice, "تعذر تحميل مكتبة الاتصال. تحقق من اتصال الإنترنت ثم أعد المحاولة."); }
-  }
+                    <!-- Dual Action CTAs -->
+                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                        <a href="#levels" class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl text-sm sm:text-base font-bold text-white bg-teal-600 hover:bg-teal-700 shadow-md shadow-teal-600/25 transition-all">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <span>استكشف مستويات Excel</span>
+                        </a>
+                        <a href="#accounting" class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl text-sm sm:text-base font-bold text-cyan-900 bg-cyan-100/80 hover:bg-cyan-200/80 border border-cyan-300 transition-all">
+                            <i class="fa-solid fa-file-invoice-dollar"></i>
+                            <span>خدمات المكتب الضريبي</span>
+                        </a>
+                    </div>
 
-  document.getElementById("signupForm").addEventListener("submit", async (e) => {
-    e.preventDefault();
-    if (!supabase) return show(signupStatus, "الاتصال بقاعدة البيانات غير مُعد بعد. راجع دليل الإعداد.");
-    const full_name = document.getElementById("fullName").value.trim();
-    const email = document.getElementById("signupEmail").value.trim();
-    const password = document.getElementById("signupPassword").value;
-    const { error } = await supabase.auth.signUp({
-      email, password, options: { data: { full_name }, emailRedirectTo: location.origin + location.pathname }
-    });
-    show(signupStatus, error ? "تعذر إنشاء الحساب: " + error.message : "تم إرسال طلب التسجيل. راجع بريدك الإلكتروني لتأكيد الحساب.");
-  });
+                    <!-- Pillars -->
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-teal-200 max-w-xl">
+                        <div class="bg-white/60 p-3 rounded-xl border border-teal-100">
+                            <div class="text-sm sm:text-base font-extrabold text-teal-800">تدريب تطبيقي</div>
+                            <div class="text-xs text-slate-600 mt-0.5">شيتات وملفات من واقع العمل</div>
+                        </div>
+                        <div class="bg-white/60 p-3 rounded-xl border border-teal-100">
+                            <div class="text-sm sm:text-base font-extrabold text-teal-800">3 مستويات متدرجة</div>
+                            <div class="text-xs text-slate-600 mt-0.5">من التأسيس وحتى الداشبورد</div>
+                        </div>
+                        <div class="bg-white/60 p-3 rounded-xl border border-cyan-100">
+                            <div class="text-sm sm:text-base font-extrabold text-cyan-800">دعم ضريبي ومحاسبي</div>
+                            <div class="text-xs text-slate-600 mt-0.5">فواتير إلكترونية وإقرارات</div>
+                        </div>
+                    </div>
+                </div>
 
-  document.getElementById("loginForm").addEventListener("submit", async (e) => {
-    e.preventDefault();
-    if (!supabase) return show(loginStatus, "الاتصال بقاعدة البيانات غير مُعد بعد. راجع دليل الإعداد.");
-    const email = document.getElementById("loginEmail").value.trim();
-    const password = document.getElementById("loginPassword").value;
-    const { error } = await supabase.auth.signInWithPassword({ email, password });
-    show(loginStatus, error ? "تعذر تسجيل الدخول: " + error.message : "تم تسجيل الدخول. تفعيل الاشتراك والمواد التدريبية يتم بعد مراجعة الإدارة.");
-  });
+                <!-- Left Visual Card -->
+                <div class="lg:col-span-5">
+                    <div class="bg-teal-50/90 rounded-2xl border border-teal-300 shadow-xl shadow-teal-700/10 overflow-hidden">
+                        <div class="bg-gradient-to-r from-teal-700 to-emerald-700 px-4 py-3 flex items-center justify-between text-white">
+                            <div class="flex items-center gap-2 text-xs font-semibold">
+                                <i class="fa-solid fa-table"></i>
+                                <span>Kareem_Elbardesy_Hub.xlsx</span>
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <span class="w-2.5 h-2.5 rounded-full bg-white/40"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-white/40"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-white/80"></span>
+                            </div>
+                        </div>
 
-  document.getElementById("logoutBtn").addEventListener("click", async () => {
-    if (!supabase) return show(loginStatus, "الاتصال بقاعدة البيانات غير مُعد بعد.");
-    const { error } = await supabase.auth.signOut();
-    show(loginStatus, error ? "تعذر تسجيل الخروج: " + error.message : "تم تسجيل الخروج.");
-  });
-</script>
-</body>
-</html>
+                        <div class="bg-teal-100/70 border-b border-teal-200 px-4 py-2 flex items-center gap-3 text-xs" dir="ltr">
+                            <span class="font-serif italic font-bold text-teal-900 bg-white px-2 py-0.5 rounded border border-teal-200">fx</span>
+                            <span class="font-mono text-slate-700 truncate">=GROWTH("تدريب عملي", "إدارة ضريبية", "دقة واحتراف")</span>
+                        </div>
+
+                        <div class="p-6 space-y-5">
+                            <div class="flex items-center gap-4">
+                                <div class="w-14 h-14 rounded-2xl bg-teal-600 text-white flex items-center justify-center text-2xl font-extrabold shadow-sm">
+                                    ك
+                                </div>
+                                <div>
+                                    <h2 class="text-lg font-extrabold text-slate-900">أ/ كريم البرديسي</h2>
+                                    <p class="text-xs sm:text-sm font-semibold text-teal-800">محاسب عام ومدرب تطبيقات Excel</p>
+                                </div>
+                            </div>
+
+                            <div class="space-y-3 bg-white/85 p-4 rounded-xl border border-teal-200">
+                                <div class="flex items-start gap-3">
+                                    <div class="w-6 h-6 rounded-lg bg-teal-100 text-teal-800 flex items-center justify-center shrink-0 mt-0.5">
+                                        <i class="fa-solid fa-check text-xs"></i>
+                                    </div>
+                                    <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                                        <strong>الأكاديمية:</strong> تبسيط مهارات الإكسيل وبناء النماذج المالية والإدارية خطوة بخطوة.
+                                    </p>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <div class="w-6 h-6 rounded-lg bg-cyan-100 text-cyan-800 flex items-center justify-center shrink-0 mt-0.5">
+                                        <i class="fa-solid fa-check text-xs"></i>
+                                    </div>
+                                    <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                                        <strong>المكتب المحاسبي والضريبي:</strong> إدارة الفواتير الإلكترونية والإقرارات بالشراكة مع خبير ضرائب.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="pt-1 flex items-center justify-between text-xs text-slate-600 font-semibold">
+                                <span><i class="fa-solid fa-location-dot text-teal-700 ml-1"></i> جمهورية مصر العربية</span>
+                                <a href="https://wa.me/201145970140?text=السلام%20عليكم%20أستاذ%20كريم" target="_blank" class="font-bold text-teal-800 hover:underline">
+                                    تواصل مباشر عبر واتساب ←
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT & DUAL IDENTITY ==================== -->
+    <section id="about" class="py-16 bg-emerald-50/70 border-y border-teal-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-bold tracking-wider uppercase text-teal-900 bg-teal-100 px-3.5 py-1.5 rounded-full border border-teal-300">
+                    رؤية المشروع
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-3">
+                    نشاطان متكاملان لخدمة الأفراد والشركات
+                </h2>
+                <p class="text-sm sm:text-base text-slate-700 mt-3 leading-relaxed">
+                    تم تأسيس هذه المنصة لتكون حلقة الوصل بين التطوير المهني العملي في مجال المحاسبة وبرامج الأوفيس، وبين تقديم خدمات محاسبية وضريبية موثوقة لأصحاب الأعمال.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="p-7 rounded-2xl bg-gradient-to-br from-teal-100/70 to-emerald-50/90 border border-teal-300 card-hover">
+                    <div class="w-12 h-12 rounded-xl bg-teal-600 text-white flex items-center justify-center text-xl mb-5 shadow-sm">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-slate-900 mb-2">1. أكاديمية التدريب والتطوير المهني</h3>
+                    <p class="text-sm text-slate-700 leading-relaxed mb-4">
+                        نركز على الجانب التطبيقي بعيداً عن الحشو النظري، لتأهيل الطلاب وحديثي التخرج والمحاسبين لاستخدام برنامج Microsoft Excel بكفاءة عالية في إعداد التقارير وتحليل البيانات.
+                    </p>
+                    <ul class="space-y-2 text-xs sm:text-sm text-slate-800 font-medium">
+                        <li><i class="fa-solid fa-circle-check text-teal-700 ml-2"></i> تقسيم واضح للمستويات دون خلط بين التأسيسي والمتقدم.</li>
+                        <li><i class="fa-solid fa-circle-check text-teal-700 ml-2"></i> مركز ملفات وواجبات خاص للمتدربين المشتركين.</li>
+                        <li><i class="fa-solid fa-circle-check text-teal-700 ml-2"></i> شيتات وبرامج إكسيل جاهزة تخدم بيئة العمل.</li>
+                    </ul>
+                </div>
+
+                <div class="p-7 rounded-2xl bg-gradient-to-br from-cyan-100/70 to-teal-50/90 border border-cyan-300 card-hover">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-700 text-white flex items-center justify-center text-xl mb-5 shadow-sm">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-slate-900 mb-2">2. مكتب المحاسب القانوني والخدمات الضريبية</h3>
+                    <p class="text-sm text-slate-700 leading-relaxed mb-4">
+                        بالشراكة مع خبير في مصلحة الضرائب المصرية، نقدم منظومة متكاملة لإدارة الالتزامات الضريبية والمحاسبية للمنشآت والشركات بدقة والتزام كامل بالمواعيد القانونية.
+                    </p>
+                    <ul class="space-y-2 text-xs sm:text-sm text-slate-800 font-medium">
+                        <li><i class="fa-solid fa-circle-check text-cyan-700 ml-2"></i> إعداد وإرسال الفواتير الضريبية الإلكترونية ومتابعتها.</li>
+                        <li><i class="fa-solid fa-circle-check text-cyan-700 ml-2"></i> تقديم الإقرارات الضريبية الشهرية (نموذج 10) والسنوية.</li>
+                        <li><i class="fa-solid fa-circle-check text-cyan-700 ml-2"></i> استشارات محاسبية وضريبية وتنظيم الدورات المستندية.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== EXCEL COURSES (3 LEVELS) ==================== -->
+    <section id="levels" class="py-20 bg-gradient-to-b from-teal-50 via-teal-100/40 to-emerald-50/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-xs font-bold tracking-wider uppercase text-teal-900 bg-teal-200/70 px-3.5 py-1.5 rounded-full">
+                    المسار التدريبي الأساسي
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-3">
+                    مستويات كورس Microsoft Excel
+                </h2>
+                <p class="text-sm sm:text-base text-slate-700 mt-3">
+                    منهج مقسم بعناية إلى ثلاثة مستويات مستقلة؛ اختر المستوى الذي يناسب نقطة بدايتك الحالية، واستفسر مباشرة عن المواعيد والتفاصيل عبر واتساب.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8 items-stretch">
+                
+                <!-- LEVEL 1 -->
+                <div class="bg-white/90 rounded-2xl border border-teal-300 p-7 flex flex-col justify-between card-hover shadow-sm">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-lg bg-teal-100 text-teal-900 text-xs font-bold border border-teal-300">
+                                المستوى الأول
+                            </span>
+                            <span class="text-xs font-bold text-teal-800 bg-teal-50 px-2.5 py-1 rounded-md border border-teal-200">
+                                <i class="fa-regular fa-clock ml-1"></i> 3 محاضرات
+                            </span>
+                        </div>
+                        
+                        <h3 class="text-xl font-extrabold text-slate-900">Excel Beginner</h3>
+                        <p class="text-xs font-bold text-teal-700 mt-1 mb-4">
+                            الفئة المستهدفة: المبتدئون وحديثو التخرج
+                        </p>
+                        
+                        <p class="text-sm text-slate-700 leading-relaxed mb-5 pb-4 border-b border-teal-100">
+                            بناء أساس متين لكسر رهبة البرنامج وإتقان التعامل اليومي مع الجداول، التنسيق، الطباعة، والعمليات الحسابية الأساسية.
+                        </p>
+
+                        <h4 class="text-xs font-extrabold text-slate-800 uppercase tracking-wide mb-3">محتوى المحاضرات:</h4>
+                        <ul class="space-y-3 text-xs sm:text-sm text-slate-700 mb-6">
+                            <li class="flex items-start gap-2.5">
+                                <span class="w-5 h-5 rounded-full bg-teal-600 text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span>
+                                <span>واجهة البرنامج، التعامل مع الخلايا والصفوف والأعمدة، الحفظ، التنسيق، وإعدادات الطباعة.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <span class="w-5 h-5 rounded-full bg-teal-600 text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span>
+                                <span>تنظيم البيانات، الفرز والتصفية (Sort & Filter)، البحث والتبديل، التجميد، الجداول، التحقق من صحة البيانات، وتنسيق الأرقام والتواريخ.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <span class="w-5 h-5 rounded-full bg-teal-600 text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span>
+                                <span>العمليات الحسابية والنسب، المراجع النسبية والمطلقة، والدوال الأساسية: <code class="text-xs bg-teal-50 px-1 rounded text-teal-900 font-bold">SUM, AVERAGE, MIN, MAX, COUNT, COUNTIF, COUNTBLANK</code>.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-4 border-t border-teal-100">
+                        <a href="
