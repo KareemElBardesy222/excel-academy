@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" data-theme="light">
+<html lang="ar" dir="rtl" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أكاديمية كريم البرديسي | التدريب المحاسبي والخدمات الضريبية</title>
+    <title>أكاديمية كريم البرديسي | للتدريب والخدمات المحاسبية والضريبية</title>
     <style>
         :root[data-theme="light"] {
             --bg-main: #F4F7F6;
@@ -34,7 +34,7 @@
             --gold: #D97706;
         }
 
-        * { box-sizing: border-box; }
+        * { box-sizing: border-box; scroll-behavior: smooth; }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -46,7 +46,7 @@
             transition: background-color 0.3s, color 0.3s;
         }
 
-        /* الهيدر العلوي */
+        /* الهيدر العلوي وأزرار التنقل */
         header {
             background-color: var(--header-bg);
             padding: 15px 30px;
@@ -58,11 +58,12 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+            transition: background-color 0.3s;
         }
 
         header h1 {
             margin: 0;
-            font-size: 20px;
+            font-size: 19px;
             color: var(--text-main);
         }
 
@@ -79,11 +80,11 @@
             font-weight: 600;
             font-size: 14px;
             padding: 6px 10px;
+            transition: color 0.2s;
         }
 
         .nav-links a:hover { color: var(--teal); }
 
-        /* أيقونة واتساب العصرية */
         .btn-whatsapp-icon {
             background-color: #25D366 !important;
             color: white !important;
@@ -99,9 +100,7 @@
             transition: transform 0.2s;
         }
 
-        .btn-whatsapp-icon:hover {
-            transform: scale(1.08);
-        }
+        .btn-whatsapp-icon:hover { transform: scale(1.08); }
 
         .btn-portal-nav {
             background-color: var(--teal);
@@ -129,12 +128,13 @@
             background: var(--hero-bg);
             color: white;
             text-align: center;
-            padding: 65px 20px;
+            padding: 70px 20px;
             border-bottom: 4px solid var(--teal);
         }
 
-        .hero h2 { font-size: 29px; margin-bottom: 12px; }
-        .hero p { max-width: 680px; margin: 0 auto 20px; color: #E2E8F0; font-size: 17px; }
+        .hero h2 { font-size: 30px; margin-bottom: 10px; }
+        .hero .tagline { font-size: 18px; color: #20B2AA; font-weight: bold; margin-bottom: 15px; }
+        .hero p { max-width: 700px; margin: 0 auto; color: #E2E8F0; font-size: 16px; }
 
         .container {
             max-width: 1140px;
@@ -144,7 +144,7 @@
 
         .main-section-title {
             text-align: center;
-            font-size: 28px;
+            font-size: 26px;
             margin: 50px 0 25px 0;
             color: var(--navy);
             background: var(--card-bg);
@@ -152,15 +152,14 @@
             border-radius: 10px;
             border-right: 6px solid var(--teal);
             box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            transition: background-color 0.3s, color 0.3s;
         }
 
-        :root[data-theme="dark"] .main-section-title {
-            color: var(--teal);
-        }
+        :root[data-theme="dark"] .main-section-title { color: var(--teal); }
 
         .section-title {
             text-align: center;
-            font-size: 23px;
+            font-size: 22px;
             margin-bottom: 30px;
             color: var(--text-main);
         }
@@ -174,7 +173,7 @@
             margin: 8px auto 0;
         }
 
-        /* قسم تعريف المدرب */
+        /* قسم تعريف المدرب وسابقة الأعمال */
         .instructor-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -186,6 +185,7 @@
             gap: 30px;
             margin-bottom: 40px;
             box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+            transition: background-color 0.3s;
         }
 
         @media (max-width: 768px) {
@@ -202,26 +202,15 @@
             background-color: var(--input-bg);
         }
 
-        .instructor-info h3 {
-            margin: 0 0 8px 0;
-            font-size: 24px;
-            color: var(--teal);
-        }
-
-        .instructor-subtitle {
-            font-weight: bold;
-            color: var(--gold);
-            margin-bottom: 15px;
-            display: block;
-            font-size: 15px;
-        }
+        .instructor-info h3 { margin: 0 0 5px 0; font-size: 23px; color: var(--teal); }
+        .instructor-subtitle { font-weight: bold; color: var(--gold); margin-bottom: 12px; display: block; font-size: 14.5px; }
 
         .exp-list {
             list-style: none;
             padding: 0;
             margin: 15px 0 0 0;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 10px;
         }
 
@@ -233,7 +222,7 @@
             border: 1px solid var(--border-color);
         }
 
-        /* شبكة البطاقات */
+        /* شبكة الدورات والبطاقات */
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -251,7 +240,7 @@
             flex-direction: column;
             justify-content: space-between;
             box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-            transition: transform 0.2s;
+            transition: transform 0.2s, background-color 0.3s;
         }
 
         .card:hover { transform: translateY(-4px); }
@@ -289,6 +278,17 @@
 
         .btn-main:hover { background: var(--teal-dark); }
 
+        /* نافذة المستويات */
+        #excel-levels-section {
+            display: none;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 25px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+        }
+
         /* بوابة المشتركين والأكواد */
         .portal-box {
             background: var(--card-bg);
@@ -309,10 +309,10 @@
             border-radius: 8px;
             background: var(--input-bg);
             color: var(--text-main);
-            font-size: 16px;
+            font-size: 15px;
             text-align: center;
             font-weight: bold;
-            margin: 15px 0;
+            margin: 10px 0;
         }
 
         .portal-box input:focus { outline: none; border-color: var(--teal); }
@@ -327,7 +327,7 @@
             display: none;
         }
 
-        /* نافذة استعراض الفيديوهات والملفات */
+        /* مشغل المحتوى المحمي */
         #protected-viewer {
             display: none;
             background: var(--card-bg);
@@ -347,29 +347,6 @@
             margin-bottom: 20px;
         }
 
-        .lessons-bar {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-
-        .lesson-btn {
-            background: var(--input-bg);
-            color: var(--text-main);
-            border: 1px solid var(--border-color);
-            padding: 8px 16px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 600;
-        }
-
-        .lesson-btn.active {
-            background: var(--teal);
-            color: white;
-            border-color: var(--teal);
-        }
-
         .video-frame {
             position: relative;
             padding-bottom: 56.25%;
@@ -380,10 +357,7 @@
             margin-bottom: 20px;
         }
 
-        .video-frame iframe {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-        }
+        .video-frame iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
         .downloads-area {
             background: var(--input-bg);
@@ -404,7 +378,7 @@
             font-weight: 600;
         }
 
-        /* قسم آراء المتدربين */
+        /* آراء المتدربين */
         .reviews-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -459,122 +433,150 @@
     <header>
         <h1>أكاديمية كريم البرديسي</h1>
         <div class="nav-links">
-            <a href="#about">عن المحاضر</a>
-            <a href="#education">التعليم والتدريب</a>
+            <a href="#about">عن المدرب</a>
+            <a href="#education">الدورات المتاحة</a>
             <a href="#tax-services">الخدمات الضريبية</a>
             <a href="#reviews">آراء المتدربين</a>
             <button class="btn-portal-nav" onclick="goToPortal()">دخول المشتركين</button>
             <a href="https://wa.me/201145970140" target="_blank" class="btn-whatsapp-icon" title="تواصل عبر واتساب">💬</a>
-            <button class="theme-btn" id="themeBtn" onclick="toggleTheme()" title="الوضع الليلي">🌙</button>
+            <button class="theme-btn" id="themeBtn" onclick="toggleTheme()" title="تغيير الوضع">☀️</button>
         </div>
     </header>
 
     <section class="hero">
-        <h2>التدريب المحاسبي والتقني المتكامل والخدمات الضريبية</h2>
-        <p>خبرة عملية من قلب سوق العمل المصري لتأهيل المحاسبين وتصميم الأنظمة المالية وإدارة الملفات الضريبية باحترافية.</p>
+        <h2>أكاديمية كريم البرديسي للتطوير المهني والخدمات المحاسبية</h2>
+        <div class="tagline">«تعلّم بذكاء، تطوّر باحتراف»</div>
+        <p>منصة تدريبية متكاملة ومكتب استشارات ضريبية ومحاسبية لإدارة الحسابات وتصميم الأنظمة باحترافية.</p>
     </section>
 
     <div class="container">
 
-        <!-- قسم تعريف المدرب وخبراته -->
-        <h2 id="about" class="section-title">عن المحاضر والمدرب</h2>
+        <!-- ================= قسم عن المدرب وسابقة الأعمال ================= -->
+        <h2 id="about" class="section-title">عن المدرب وخبراته التدريبية</h2>
         <div class="instructor-card">
-            <img src="profile.jpg" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png'" alt="كريم محمود البرديسي" class="instructor-img">
+            <img src="profile.jpg" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png'" alt="كريم محمود برديسي" class="instructor-img">
             <div class="instructor-info">
-                <h3>أ / كريم محمود البرديسي</h3>
-                <span class="instructor-subtitle">محاسب عام ومستشار ضريبي | مدرب معتمد من المجلس الدولي للمدربين المعتمدين (IBCT)</span>
+                <h3>أ / كريم محمود برديسي</h3>
+                <span class="instructor-subtitle">محاسب عام ومطور نظم محاسبية | مدرب معتمد من المجلس الدولي للمدربين المعتمدين (IBCT)</span>
                 <p style="color: var(--text-muted); margin: 0;">
-                    متخصص في المحاسبة المالية، تصميم الدورات المستندية، وبناء أنظمة الحسابات والمخازن باستخدام Microsoft Excel و Access، مع خبرة عملية واسعة في التعامل مع البوابة الإلكترونية لمصلحة الضرائب المصرية والفاتورة الإلكترونية.
+                    متخصص في المحاسبة المالية وإعداد النظم المحاسبية، مع خبرة عملية واسعة في التأهيل المهني والضريبي وتصميم الشيتات والبرامج المالية المتقدمة.
                 </p>
                 <ul class="exp-list">
-                    <li><strong>🎓 الاعتماد الدولي:</strong> مدرب معتمد (TOT) من البورد الدولي IBCT.</li>
-                    <li><strong>💼 الخبرة المحاسبية:</strong> محاسب عام ومصمم أنظمة مالية لشركات التجارة والمقاولات.</li>
-                    <li><strong>🧾 الخبرة الضريبية:</strong> إعداد الإقرارات الضريبية والتسويات الضريبية.</li>
-                    <li><strong>🏛️ سابقة الأعمال:</strong> تقديم برامج تدريبية في وحدات التضامن الاجتماعي، والمبادرات الشبابية.</li>
+                    <li><strong>🎓 الاعتماد الدولي:</strong> مدرب معتمد من المجلس الدولي للمدربين (IBCT).</li>
+                    <li><strong>🏛️ وحدة التضامن:</strong> سابقة تدريب في وحدة التضامن الاجتماعي بجامعة بني سويف.</li>
+                    <li><strong>🌱 مبادرات شبابية:</strong> تدريب ضمن مبادرة شباب لمستقبل أفضل.</li>
+                    <li><strong>🏢 أكاديميات محلية:</strong> تدريب في أكاديمية العقبري للتدريب بمحافظة المنيا والدورات الأونلاين.</li>
                 </ul>
             </div>
         </div>
 
-        <!-- ================= القسم الأول: التدريب والتعليم ================= -->
+        <!-- ================= القسم الأول: التدريب والتعليم (الدورات المتاحة) ================= -->
         <div id="education">
-            <h2 class="main-section-title">📚 أولاً: قسم التدريب والتعليم (الكورسات والمستويات)</h2>
-            <h3 class="section-title">مستويات التدريب العملي على Microsoft Excel</h3>
+            <h2 class="main-section-title">📚 أولاً: قسم التدريب والتعليم (الدورات المتاحة)</h2>
+            <h3 class="section-title">اختر الدورة التدريبية لاستعراض محتواها ومستوياتها</h3>
             
             <div class="grid-3">
-                <div class="card">
+                <div class="card" style="border-top: 5px solid var(--teal);">
                     <div>
-                        <span class="badge">المستوى الأول (التأسيسي)</span>
-                        <h3>الأساسيات والتنسيق المحاسبي</h3>
-                        <ul>
-                            <li>التعرف على واجهة البرنامج واختصارات لوحة المفاتيح.</li>
-                            <li>تنسيق الجداول المحاسبية والتنسيق الشرطي.</li>
-                            <li>التحقق من صحة البيانات (Data Validation).</li>
-                            <li>الدوال الحسابية والمنطقية الأساسية (SUM, IF).</li>
-                            <li>إعداد الطباعة والتقارير الرسمية.</li>
-                        </ul>
+                        <span class="badge">الدورة الأساسية</span>
+                        <h3>دورة Microsoft Excel المحاسبية والعملية</h3>
+                        <p style="color: var(--text-muted); font-size: 14.5px;">الدورة الشاملة من البداية وحتى الاحتراف، مصممة خصيصاً للمحاسبين وبتطبيقات عملية من سوق العمل المصري.</p>
                     </div>
-                    <a href="https://wa.me/201145970140?text=مرحباً%20أستاذ%20كريم،%20أرغب%20في%20حجز%20المستوى%20الأول%20من%20دورة%20Excel" target="_blank" class="btn-main">احجز المستوى الأول عبر واتساب</a>
+                    <button class="btn-main" onclick="toggleExcelLevels()">عرض مستويات الدورة</button>
                 </div>
 
-                <div class="card">
+                <div class="card" style="border-top: 5px solid var(--gold); opacity: 0.85;">
                     <div>
-                        <span class="badge">المستوى الثاني (المتوسط)</span>
-                        <h3>التحليل المالي والدوال المتقدمة</h3>
-                        <ul>
-                            <li>الدوال الشرطية المركبة (SUMIFS, COUNTIFS).</li>
-                            <li>دوال البحث الديناميكية (VLOOKUP, XLOOKUP).</li>
-                            <li>تحليل البيانات بواسطة الجداول المحورية (Pivot Tables).</li>
-                            <li>حماية المعادلات وأوراق العمل.</li>
-                            <li>تطبيق عملي: تصميم شيت النقدية والعملاء والموردين.</li>
-                        </ul>
+                        <span class="badge">قريباً</span>
+                        <h3>دورة الأنظمة المحاسبية المتقدمة (ERP)</h3>
+                        <p style="color: var(--text-muted); font-size: 14.5px;">مسار تدريبي قادم لتأهيل المحاسبين على العمل ببرامج وأنظمة تخطيط موارد المؤسسات الكبرى.</p>
                     </div>
-                    <a href="https://wa.me/201145970140?text=مرحباً%20أستاذ%20كريم،%20أرغب%20في%20حجز%20المستوى%20الثاني%20من%20دورة%20Excel" target="_blank" class="btn-main">احجز المستوى الثاني عبر واتساب</a>
+                    <a href="https://wa.me/201145970140?text=مرحباً%20أستاذ%20كريم،%20أرغب%20في%20التسجيل%20في%20قائمة%20انتظار%20دورة%20ERP" target="_blank" class="btn-main" style="background: var(--text-muted);">قريباً - تواصل للاستفسار</a>
                 </div>
+            </div>
 
-                <div class="card">
-                    <div>
-                        <span class="badge">المستوى الثالث (الاحترافي)</span>
-                        ### الأتمتة والدورات المستندية الكاملة
-                        <ul>
-                            <li>تصميم اليومية الأمريكية وميزان المراجعة.</li>
-                            <li>إعداد القوائم المالية (الدخل والمركز المالي).</li>
-                            <li>تجميع البيانات باستخدام Power Query.</li>
-                            <li>تسجيل الماكرو (Macros) لأتمتة المهام.</li>
-                            <li>مشروع التخرج: نظام متكامل للمخازن والمشتريات.</li>
-                        </ul>
+            <!-- المستويات الثلاثة لكورس الإكسل -->
+            <div id="excel-levels-section">
+                <h3 class="section-title" style="margin-top: 0;">المستويات الثلاثة لدورة Microsoft Excel</h3>
+                <div class="grid-3">
+                    <div class="card">
+                        <div>
+                            <span class="badge">المستوى الأول (التأسيسي)</span>
+                            <h3>الأساسيات والتنسيق المحاسبي</h3>
+                            <ul>
+                                <li>التعرف على واجهة البرنامج واختصارات لوحة المفاتيح.</li>
+                                <li>تنسيق الجداول المحاسبية والتنسيق الشرطي.</li>
+                                <li>التحقق من صحة البيانات (Data Validation).</li>
+                                <li>الدوال الحسابية والمنطقية الأساسية (SUM, IF).</li>
+                                <li>إعداد الطباعة والتقارير الرسمية.</li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/201145970140?text=مرحباً%20أستاذ%20كريم،%20أرغب%20في%20حجز%20المستوى%20الأول%20من%20دورة%20Excel" target="_blank" class="btn-main">احجز المستوى الأول عبر واتساب</a>
                     </div>
-                    <a href="https://wa.me/201145970140?text=مرحباً%20أستاذ%20كريم،%20أرغب%20في%20حجز%20المستوى%20الثالث%20من%20دورة%20Excel" target="_blank" class="btn-main">احجز المستوى الثالث عبر واتساب</a>
+
+                    <div class="card">
+                        <div>
+                            <span class="badge">المستوى الثاني (المتوسط)</span>
+                            <h3>التحليل المالي والدوال المتقدمة</h3>
+                            <ul>
+                                <li>الدوال الشرطية المركبة (SUMIFS, COUNTIFS).</li>
+                                <li>دوال البحث الديناميكية (VLOOKUP, XLOOKUP).</li>
+                                <li>تحليل البيانات بواسطة الجداول المحورية (Pivot Tables).</li>
+                                <li>حماية المعادلات وأوراق العمل.</li>
+                                <li>تطبيق عملي: تصميم شيت النقدية والعملاء والموردين.</li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/201145970140?text=مرحباً%20أستاذ%20كريم،%20أرغب%20في%20حجز%20المستوى%20الثاني%20من%20دورة%20Excel" target="_blank" class="btn-main">احجز المستوى الثاني عبر واتساب</a>
+                    </div>
+
+                    <div class="card">
+                        <div>
+                            <span class="badge">المستوى الثالث (الاحترافي)</span>
+                            <h3>الأتمتة والدورات المستندية الكاملة</h3>
+                            <ul>
+                                <li>تصميم اليومية الأمريكية وميزان المراجعة.</li>
+                                <li>إعداد القوائم المالية (الدخل والمركز المالي).</li>
+                                <li>تجميع البيانات باستخدام Power Query.</li>
+                                <li>تسجيل الماكرو (Macros) لأتمتة المهام.</li>
+                                <li>مشروع التخرج: نظام متكامل للمخازن والمشتريات.</li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/201145970140?text=مرحباً%20أستاذ%20كريم،%20أرغب%20في%20حجز%20المستوى%20الثالث%20من%20دورة%20Excel" target="_blank" class="btn-main">احجز المستوى الثالث عبر واتساب</a>
+                    </div>
                 </div>
             </div>
 
             <!-- بوابة المشتركين والأكواد -->
             <div id="portal" class="portal-box">
                 <h3>بوابة المشتركين والطلاب (المحتوى الخاص)</h3>
-                <p style="font-size: 14px; color: var(--text-muted);">أدخل كود التفعيل الخاص بك لفتح نافذة المشاهدة وتحميل ملفات العمل</p>
-                <input type="text" id="access-code" placeholder="أدخل الكود هنا (مثال: KAREEM-101)">
+                <p style="font-size: 13px; color: var(--text-muted);">أدخل بريدك الإلكتروني وكود التفعيل الخاص بك للدخول</p>
+                <input type="email" id="user-email" placeholder="البريد الإلكتروني المسجل">
+                <input type="text" id="access-code" placeholder="كود التفعيل الخاص بك">
                 <button class="btn-main" onclick="verifyCode()">تفعيل والدخول للمحتوى</button>
-                <div id="error-msg">الكود غير صحيح أو غير مفعل. تواصل معنا عبر واتساب للحصول على كودك.</div>
+                <div id="error-msg">البريد الإلكتروني أو كود التفعيل غير صحيح!</div>
             </div>
 
-            <!-- نافذة عرض المحتوى (تظهر بعد إدخال الكود الصحيح) -->
+            <!-- نافذة عرض المحتوى (قائمة تشغيل يوتيوب وملفات درايف) -->
             <div id="protected-viewer">
                 <div class="viewer-header">
                     <h3 id="subscriber-welcome" style="margin: 0; color: var(--teal);">مرحباً بك!</h3>
                     <button onclick="closeViewer()" style="background: #EF4444; color: white; border: none; padding: 6px 14px; border-radius: 5px; cursor: pointer;">تسجيل خروج</button>
                 </div>
 
-                <div class="lessons-bar" id="lessons-tabs"></div>
-
                 <div class="video-frame">
-                    <iframe id="video-player" src="" frameborder="0" allowfullscreen></iframe>
+                    <iframe id="playlist-player" src="" frameborder="0" allowfullscreen></iframe>
                 </div>
 
-                <h3 id="current-lesson-title">عنوان الدرس</h3>
-                <p id="current-lesson-desc" style="color: var(--text-muted);"></p>
+                <h3 style="color: var(--text-main);">محاضرات كورس الإكسل الشامل</h3>
+                <p style="color: var(--text-muted);">يمكنك مشاهدة المحاضرات مباشرة من قائمة التشغيل أدناه وتحميل شيتات العمل والملفات المرفقة.</p>
 
                 <div class="downloads-area">
                     <strong>📁 ملفات وشيتات العمل المرفقة للتحميل المباشر:</strong><br>
-                    <div id="files-container" style="margin-top: 8px;"></div>
+                    <div id="files-container" style="margin-top: 10px;">
+                        <a href="https://drive.google.com/uc?export=download&id=1A2B3C4D5E" class="dl-link" target="_blank">📥 شيتات المستوى الأول (Excel)</a>
+                        <a href="https://drive.google.com/uc?export=download&id=5T4R3E2W1Q" class="dl-link" target="_blank">📥 شيتات المستوى الثاني (Excel)</a>
+                        <a href="https://drive.google.com/uc?export=download&id=9Z8Y7X6W5V" class="dl-link" target="_blank">📥 دليل الشرح وملفات PDF</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -586,7 +588,6 @@
             <h3 class="section-title">خدمات احترافية لشركتك ومنشأتك من قلب سوق العمل</h3>
 
             <div class="grid-3">
-                <!-- الخدمة 1 -->
                 <div class="card">
                     <div>
                         <span class="badge">خدمة معتمدة</span>
@@ -596,7 +597,6 @@
                     <a href="https://wa.me/201145970140?text=مرحباً%20أستاذ%20كريم،%20أرغب%20في%20طلب%20خدمة%20إعداد%20وتقديم%20الفواتير%20الإلكترونية" target="_blank" class="btn-main">اطلب الخدمة الآن</a>
                 </div>
 
-                <!-- الخدمة 2 -->
                 <div class="card">
                     <div>
                         <span class="badge">إقرار شهري</span>
@@ -606,7 +606,6 @@
                     <a href="https://wa.me/201145970140?text=مرحباً%20أستاذ%20كريم،%20أرغب%20في%20طلب%20خدمة%20تقديم%20الإقرار%20الشهري%20نموذج%2010" target="_blank" class="btn-main">اطلب الخدمة الآن</a>
                 </div>
 
-                <!-- الخدمة 3 -->
                 <div class="card">
                     <div>
                         <span class="badge">إقرار سنوي</span>
@@ -616,7 +615,6 @@
                     <a href="https://wa.me/201145970140?text=مرحباً%20أستاذ%20كريم،%20أرغب%20في%20طلب%20خدمة%20تقديم%20الإقرار%20الضريبي%20السنوي" target="_blank" class="btn-main">اطلب الخدمة الآن</a>
                 </div>
 
-                <!-- الخدمة 4 -->
                 <div class="card">
                     <div>
                         <span class="badge">إدارة المستندات</span>
@@ -626,7 +624,6 @@
                     <a href="https://wa.me/201145970140?text=مرحباً%20أستاذ%20كريم،%20أرغب%20في%20طلب%20خدمة%20تحميل%20ومتابعة%20الفواتير%20الإلكترونية" target="_blank" class="btn-main">اطلب الخدمة الآن</a>
                 </div>
 
-                <!-- الخدمة 5 -->
                 <div class="card">
                     <div>
                         <span class="badge">استشارات متخصصة</span>
@@ -636,7 +633,6 @@
                     <a href="https://wa.me/201145970140?text=مرحباً%20أستاذ%20كريم،%20أرغب%20في%20حجز%20استشارة%20محاسبية%20وضريبية" target="_blank" class="btn-main">احجز استشارتك الآن</a>
                 </div>
 
-                <!-- خدمة إضافية (أنظمة مخصصة) -->
                 <div class="card">
                     <div>
                         <span class="badge">أنظمة مخصصة</span>
@@ -653,33 +649,37 @@
         <h2 id="reviews" class="section-title">آراء وتقييمات المتدربين والعملاء</h2>
         <div class="reviews-grid" id="reviews-list">
             <div class="review-item">
-                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                <div class="review-stars">⭐⭐⭐⭐⭐ <span style="font-size:12px; color:var(--text-muted);">(ممتاز جداً)</span></div>
                 <p style="margin: 0; font-size: 14.5px; color: var(--text-muted);">"شرح عملي ومبسط جداً، استفدت كتير في شغلي كمحاسب خصوصاً في تصميم الدورة المستندية واليومية الأمريكية على الإكسل."</p>
                 <span class="review-author">- محاسب / أحمد عبد الرحمن</span>
             </div>
             <div class="review-item">
-                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                <div class="review-stars">⭐⭐⭐⭐⭐ <span style="font-size:12px; color:var(--text-muted);">(ممتاز جداً)</span></div>
                 <p style="margin: 0; font-size: 14.5px; color: var(--text-muted);">"أسلوب أستاذ كريم في توصيل المعلومة ممتاز وصبور جداً في التطبيق العملي خطوة بخطوة."</p>
                 <span class="review-author">- متدربة / سارة محمود</span>
             </div>
             <div class="review-item">
-                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                <div class="review-stars">⭐⭐⭐⭐⭐ <span style="font-size:12px; color:var(--text-muted);">(ممتاز جداً)</span></div>
                 <p style="margin: 0; font-size: 14.5px; color: var(--text-muted);">"شيتات الحسابات والمخازن اللي صممها لشركتنا وفرت علينا وقت ومجهود كبير جداً."</p>
                 <span class="review-author">- أ / محمد طارق (مدير مالي)</span>
             </div>
         </div>
 
-        <!-- نموذج إضافة رأي جديد بسهولة -->
+        <!-- نموذج إضافة رأي جديد بالخمس مستويات -->
         <div class="feedback-section">
             <h3 style="margin-top: 0; text-align: center;">أضف تقييمك أو رأيك في الدورات والخدمات</h3>
             <form onsubmit="addNewReview(event)">
                 <input type="text" id="fb-name" placeholder="الاسم والوظيفة (مثال: محاسب / محمود علي)" required>
-                <select id="fb-stars">
-                    <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐ (ممتاز جداً)</option>
-                    <option value="⭐⭐⭐⭐">⭐⭐⭐⭐ (جيد جداً)</option>
-                    <option value="⭐⭐⭐">⭐⭐⭐ (جيد)</option>
+                
+                <select id="fb-stars" required>
+                    <option value="⭐⭐⭐⭐⭐ (ممتاز جداً)">⭐⭐⭐⭐⭐ (ممتاز جداً)</option>
+                    <option value="⭐⭐⭐⭐ (جيد جداً)">⭐⭐⭐⭐ (جيد جداً)</option>
+                    <option value="⭐⭐⭐ (جيد)">⭐⭐⭐ (جيد)</option>
+                    <option value="⭐⭐ (سيء)">⭐⭐ (سيء)</option>
+                    <option value="⭐ (لا أنصح به)">⭐ (لا أنصح به)</option>
                 </select>
-                <textarea id="fb-msg" rows="3" placeholder="اكتب رأيك وتجربتك هنا..." required></textarea>
+
+                <textarea id="fb-msg" rows="3" placeholder="اكتب رأيك وتجربتك بكل صراحة هنا..." required></textarea>
                 <button type="submit" class="btn-main">نشر التقييم الآن</button>
             </form>
         </div>
@@ -687,10 +687,20 @@
     </div>
 
     <footer>
-        <p>© 2026 أكاديمية كريم البرديسي للتدريب المحاسبي والتقني والخدمات الضريبية | للتواصل: 01145970140</p>
+        <p>© 2026 أكاديمية كريم البرديسي للتطوير المهني والخدمات الضريبية | للتواصل: 01145970140</p>
     </footer>
 
     <script>
+        function toggleExcelLevels() {
+            const section = document.getElementById("excel-levels-section");
+            if (section.style.display === "block") {
+                section.style.display = "none";
+            } else {
+                section.style.display = "block";
+                section.scrollIntoView({ behavior: "smooth" });
+            }
+        }
+
         function toggleTheme() {
             const html = document.documentElement;
             const isDark = html.getAttribute("data-theme") === "dark";
@@ -701,97 +711,267 @@
         }
 
         window.addEventListener("DOMContentLoaded", () => {
-            const saved = localStorage.getItem("academy_theme") || "light";
+            const saved = localStorage.getItem("academy_theme") || "dark";
             document.documentElement.setAttribute("data-theme", saved);
             document.getElementById("themeBtn").innerText = saved === "dark" ? "☀️" : "🌙";
             loadSavedReviews();
         });
 
+        // قاعدة بيانات الأكواد العشوائية الآمنة
         const subscribersCodes = {
-            "KAREEM-101": { name: "أحمد علي", active: true },
-            "EXCEL-2026": { name: "محمود حسن", active: true },
-            "TAX-500":    { name: "سارة إبراهيم", active: false }
+            "KB-7942XF": { email: "student.a1@academy.com", name: "متدرب 01", active: true },
+            "M9K-281PL": { email: "student.b2@academy.com", name: "متدرب 02", active: true },
+            "X4V-930TR": { email: "student.c3@academy.com", name: "متدرب 03", active: true },
+            "L8N-562HY": { email: "student.d4@academy.com", name: "متدرب 04", active: true },
+            "P3W-149KJ": { email: "student.e5@academy.com", name: "متدرب 05", active: true },
+            "R6T-873DM": { email: "student.f6@academy.com", name: "متدرب 06", active: true },
+            "H2Q-615BC": { email: "student.g7@academy.com", name: "متدرب 07", active: true },
+            "Z9F-428NX": { email: "student.h8@academy.com", name: "متدرب 08", active: true },
+            "K5S-307GL": { email: "student.i9@academy.com", name: "متدرب 09", active: true },
+            "J1D-794WP": { email: "student.j10@academy.com", name: "متدرب 10", active: true },
+            "C8M-261TR": { email: "student.k11@academy.com", name: "متدرب 11", active: true },
+            "V3X-508YH": { email: "student.l12@academy.com", name: "متدرب 12", active: true },
+            "B6L-914FK": { email: "student.m13@academy.com", name: "متدرب 13", active: true },
+            "N2P-437QD": { email: "student.n14@academy.com", name: "متدرب 14", active: true },
+            "G7R-182ZM": { email: "student.o15@academy.com", name: "متدرب 15", active: true },
+            "T4K-695WS": { email: "student.p16@academy.com", name: "متدرب 16", active: true },
+            "D9H-321JC": { email: "student.q17@academy.com", name: "متدرب 17", active: true },
+            "F1X-846LV": { email: "student.r18@academy.com", name: "متدرب 18", active: true },
+            "S5B-209GP": { email: "student.s19@academy.com", name: "متدرب 19", active: true },
+            "W8M-753TN": { email: "student.t20@academy.com", name: "متدرب 20", active: true },
+            "Q2C-491RK": { email: "student.u21@academy.com", name: "متدرب 21", active: true },
+            "Y6J-138FD": { email: "student.v22@academy.com", name: "متدرب 22", active: true },
+            "X1N-827LH": { email: "student.w23@academy.com", name: "متدرب 23", active: true },
+            "M4Z-592WP": { email: "student.x24@academy.com", name: "متدرب 24", active: true },
+            "K9T-364BC": { email: "student.y25@academy.com", name: "متدرب 25", active: true },
+            "L3D-718XF": { email: "student.z26@academy.com", name: "متدرب 26", active: true },
+            "P7S-205GM": { email: "student.aa27@academy.com", name: "متدرب 27", active: true },
+            "R2V-943TR": { email: "student.ab28@academy.com", name: "متدرب 28", active: true },
+            "H5K-681PL": { email: "student.ac29@academy.com", name: "متدرب 29", active: true },
+            "Z8Q-314HY": { email: "student.ad30@academy.com", name: "متدرب 30", active: true },
+            "C1F-529KJ": { email: "student.ae31@academy.com", name: "متدرب 31", active: true },
+            "V9M-876DM": { email: "student.af32@academy.com", name: "متدرب 32", active: true },
+            "B4X-163NC": { email: "student.ag33@academy.com", name: "متدرب 33", active: true },
+            "N7L-492NX": { email: "student.ah34@academy.com", name: "متدرب 34", active: true },
+            "G2P-735GL": { email: "student.ai35@academy.com", name: "متدرب 35", active: true },
+            "T6R-208WP": { email: "student.aj36@academy.com", name: "متدرب 36", active: true },
+            "D3K-951TR": { email: "student.ak37@academy.com", name: "متدرب 37", active: true },
+            "F8H-439YH": { email: "student.al38@academy.com", name: "متدرب 38", active: true },
+            "S1X-674FK": { email: "student.am39@academy.com", name: "متدرب 39", active: true },
+            "W5B-382QD": { email: "student.an40@academy.com", name: "متدرب 40", active: true },
+            "Q9M-816ZM": { email: "student.ao41@academy.com", name: "متدرب 41", active: true },
+            "Y2C-157WS": { email: "student.ap42@academy.com", name: "متدرب 42", active: true },
+            "X6J-548JC": { email: "student.aq43@academy.com", name: "متدرب 43", active: true },
+            "M1N-293LV": { email: "student.ar44@academy.com", name: "متدرب 44", active: true },
+            "K4Z-731GP": { email: "student.as45@academy.com", name: "متدرب 45", active: true },
+            "L9T-604TN": { email: "student.at46@academy.com", name: "متدرب 46", active: true },
+            "P3D-482RK": { email: "student.au47@academy.com", name: "متدرب 47", active: true },
+            "R7S-196FD": { email: "student.av48@academy.com", name: "متدرب 48", active: true },
+            "H2V-835LH": { email: "student.aw49@academy.com", name: "متدرب 49", active: true },
+            "Z6K-371WP": { email: "student.ax50@academy.com", name: "متدرب 50", active: true },
+            "C4Q-928BC": { email: "student.ay51@academy.com", name: "متدرب 51", active: true },
+            "V1F-264XF": { email: "student.az52@academy.com", name: "متدرب 52", active: true },
+            "B9M-503GM": { email: "student.ba53@academy.com", name: "متدرب 53", active: true },
+            "N5X-719TR": { email: "student.bb54@academy.com", name: "متدرب 54", active: true },
+            "G3L-382PL": { email: "student.bc55@academy.com", name: "متدرب 55", active: true },
+            "T8P-647HY": { email: "student.bd56@academy.com", name: "متدرب 56", active: true },
+            "D2R-195KJ": { email: "student.be57@academy.com", name: "متدرب 57", active: true },
+            "F7K-831DM": { email: "student.bf58@academy.com", name: "متدرب 58", active: true },
+            "S4H-462NC": { email: "student.bg59@academy.com", name: "متدرب 59", active: true },
+            "W1X-908NX": { email: "student.bh60@academy.com", name: "متدرب 60", active: true },
+            "Q6B-253GL": { email: "student.bi61@academy.com", name: "متدرب 61", active: true },
+            "Y3M-741WP": { email: "student.bj62@academy.com", name: "متدرب 62", active: true },
+            "X8C-386TR": { email: "student.bk63@academy.com", name: "متدرب 63", active: true },
+            "M2J-619YH": { email: "student.bl64@academy.com", name: "متدرب 64", active: true },
+            "K7N-154FK": { email: "student.bm65@academy.com", name: "متدرب 65", active: true },
+            "L1Z-892QD": { email: "student.bn66@academy.com", name: "متدرب 66", active: true },
+            "P5T-427ZM": { email: "student.bo67@academy.com", name: "متدرب 67", active: true },
+            "R9D-208WS": { email: "student.bp68@academy.com", name: "متدرب 68", active: true },
+            "H4S-631JC": { email: "student.bq69@academy.com", name: "متدرب 69", active: true },
+            "Z1V-975LV": { email: "student.br70@academy.com", name: "متدرب 70", active: true },
+            "C7K-318GP": { email: "student.bs71@academy.com", name: "متدرب 71", active: true },
+            "V2Q-584TN": { email: "student.bt72@academy.com", name: "متدرب 72", active: true },
+            "B8F-142RK": { email: "student.bu73@academy.com", name: "متدرب 73", active: true },
+            "N4M-796FD": { email: "student.bv74@academy.com", name: "متدرب 74", active: true },
+            "G1X-429LH": { email: "student.bw75@academy.com", name: "متدرب 75", active: true },
+            "T5L-863WP": { email: "student.bx76@academy.com", name: "متدرب 76", active: true },
+            "D9P-207BC": { email: "student.by77@academy.com", name: "متدرب 77", active: true },
+            "F3R-651XF": { email: "student.bz78@academy.com", name: "متدرب 78", active: true },
+            "S8K-134GM": { email: "student.ca79@academy.com", name: "متدرب 79", active: true },
+            "W2H-948TR": { email: "student.cb80@academy.com", name: "متدرب 80", active: true },
+            "Q7X-382PL": { email: "student.cc81@academy.com", name: "متدرب 81", active: true },
+            "Y1B-519HY": { email: "student.cd82@academy.com", name: "متدرب 82", active: true },
+            "X5M-763KJ": { email: "student.ce83@academy.com", name: "متدرب 83", active: true },
+            "M8C-204DM": { email: "student.cf84@academy.com", name: "متدرب 84", active: true },
+            "K3J-687NC": { email: "student.cg85@academy.com", name: "متدرب 85", active: true },
+            "L7N-415NX": { email: "student.ch86@academy.com", name: "متدرب 86", active: true },
+            "P2Z-891GL": { email: "student.ci87@academy.com", name: "متدرب 87", active: true },
+            "R6T-153WP": { email: "student.cj88@academy.com", name: "متدرب 88", active: true },
+            "H1D-736TR": { email: "student.ck89@academy.com", name: "متدرب 89", active: true },
+            "Z5S-324YH": { email: "student.cl90@academy.com", name: "متدرب 90", active: true },
+            "C9V-608FK": { email: "student.cm91@academy.com", name: "متدرب 91", active: true },
+            "V4F-271QD": { email: "student.cn92@academy.com", name: "متدرب 92", active: true },
+            "B1M-945ZM": { email: "student.co93@academy.com", name: "متدرب 93", active: true },
+            "N8X-183WS": { email: "student.cp94@academy.com", name: "متدرب 94", active: true },
+            "G6L-527JC": { email: "student.cq95@academy.com", name: "متدرب 95", active: true },
+            "T3P-814LV": { email: "student.cr96@academy.com", name: "متدرب 96", active: true },
+            "D7R-392GP": { email: "student.cs97@academy.com", name: "متدرب 97", active: true },
+            "F2K-649TN": { email: "student.ct98@academy.com", name: "متدرب 98", active: true },
+            "S9H-107RK": { email: "student.cu99@academy.com", name: "متدرب 99", active: true },
+            "W4X-751FD": { email: "student.cv100@academy.com", name: "متدرب 100", active: true },
+            "Q3B-428LH": { email: "student.cw101@academy.com", name: "متدرب 101", active: true },
+            "Y8M-963WP": { email: "student.cx102@academy.com", name: "متدرب 102", active: true },
+            "X2C-184BC": { email: "student.cy103@academy.com", name: "متدرب 103", active: true },
+            "M6J-537XF": { email: "student.cz104@academy.com", name: "متدرب 104", active: true },
+            "K1N-892GM": { email: "student.da105@academy.com", name: "متدرب 105", active: true },
+            "L5Z-216TR": { email: "student.db106@academy.com", name: "متدرب 106", active: true },
+            "P9T-643PL": { email: "student.dc107@academy.com", name: "متدرب 107", active: true },
+            "R4D-379HY": { email: "student.dd108@academy.com", name: "متدرب 108", active: true },
+            "H7S-902KJ": { email: "student.de109@academy.com", name: "متدرب 109", active: true },
+            "Z3V-148DM": { email: "student.df110@academy.com", name: "متدرب 110", active: true },
+            "C2K-581NC": { email: "student.dg111@academy.com", name: "متدرب 111", active: true },
+            "V8Q-726NX": { email: "student.dh112@academy.com", name: "متدرب 112", active: true },
+            "B5F-394GL": { email: "student.di113@academy.com", name: "متدرب 113", active: true },
+            "N1M-619WP": { email: "student.dj114@academy.com", name: "متدرب 114", active: true },
+            "G9X-253TR": { email: "student.dk115@academy.com", name: "متدرب 115", active: true },
+            "T2L-871YH": { email: "student.dl116@academy.com", name: "متدرب 116", active: true },
+            "D6P-408FK": { email: "student.dm117@academy.com", name: "متدرب 117", active: true },
+            "F4R-192QD": { email: "student.dn118@academy.com", name: "متدرب 118", active: true },
+            "S7K-635ZM": { email: "student.do119@academy.com", name: "متدرب 119", active: true },
+            "W3H-864WS": { email: "student.dp120@academy.com", name: "متدرب 120", active: true },
+            "Q1X-509JC": { email: "student.dq121@academy.com", name: "متدرب 121", active: true },
+            "Y5B-271LV": { email: "student.dr122@academy.com", name: "متدرب 122", active: true },
+            "X9M-748GP": { email: "student.ds123@academy.com", name: "متدرب 123", active: true },
+            "M3C-192TN": { email: "student.dt124@academy.com", name: "متدرب 124", active: true },
+            "K8J-426RK": { email: "student.du125@academy.com", name: "متدرب 125", active: true },
+            "L2N-935FD": { email: "student.dv126@academy.com", name: "متدرب 126", active: true },
+            "P6Z-318LH": { email: "student.dw127@academy.com", name: "متدرب 127", active: true },
+            "R1T-684WP": { email: "student.dx128@academy.com", name: "متدرب 128", active: true },
+            "H9D-521BC": { email: "student.dy129@academy.com", name: "متدرب 129", active: true },
+            "Z4S-807XF": { email: "student.dz130@academy.com", name: "متدرب 130", active: true },
+            "C8V-249GM": { email: "student.ea131@academy.com", name: "متدرب 131", active: true },
+            "V3F-691TR": { email: "student.eb132@academy.com", name: "متدرب 132", active: true },
+            "B7M-415PL": { email: "student.ec133@academy.com", name: "متدرب 133", active: true },
+            "N2X-853HY": { email: "student.ed134@academy.com", name: "متدرب 134", active: true },
+            "G5L-176KJ": { email: "student.ee135@academy.com", name: "متدرب 135", active: true },
+            "T1P-392DM": { email: "student.ef136@academy.com", name: "متدرب 136", active: true },
+            "D8R-724NC": { email: "student.eg137@academy.com", name: "متدرب 137", active: true },
+            "F6K-508NX": { email: "student.eh138@academy.com", name: "متدرب 138", active: true },
+            "S2H-931GL": { email: "student.ei139@academy.com", name: "متدرب 139", active: true },
+            "W9X-167WP": { email: "student.ej140@academy.com", name: "متدرب 140", active: true },
+            "Q4B-682TR": { email: "student.ek141@academy.com", name: "متدرب 141", active: true },
+            "Y7M-315YH": { email: "student.el142@academy.com", name: "متدرب 142", active: true },
+            "X1C-849FK": { email: "student.em143@academy.com", name: "متدرب 143", active: true },
+            "M5J-204QD": { email: "student.en144@academy.com", name: "متدرب 144", active: true },
+            "K2N-756ZM": { email: "student.eo145@academy.com", name: "متدرب 145", active: true },
+            "L9Z-418WS": { email: "student.ep146@academy.com", name: "متدرب 146", active: true },
+            "P4T-937JC": { email: "student.eq147@academy.com", name: "متدرب 147", active: true },
+            "R8D-162LV": { email: "student.er148@academy.com", name: "متدرب 148", active: true },
+            "H3S-581GP": { email: "student.es149@academy.com", name: "متدرب 149", active: true },
+            "Z7V-304TN": { email: "student.et150@academy.com", name: "متدرب 150", active: true },
+            "C1K-872RK": { email: "student.eu151@academy.com", name: "متدرب 151", active: true },
+            "V6Q-419FD": { email: "student.ev152@academy.com", name: "متدرب 152", active: true },
+            "B3F-965LH": { email: "student.ew153@academy.com", name: "متدرب 153", active: true },
+            "N9M-238WP": { email: "student.ex154@academy.com", name: "متدرب 154", active: true },
+            "G4X-681BC": { email: "student.ey155@academy.com", name: "متدرب 155", active: true },
+            "T7L-154XF": { email: "student.ez156@academy.com", name: "متدرب 156", active: true },
+            "D1P-893GM": { email: "student.fa157@academy.com", name: "متدرب 157", active: true },
+            "F5R-326TR": { email: "student.fb158@academy.com", name: "متدرب 158", active: true },
+            "S3K-749PL": { email: "student.fc159@academy.com", name: "متدرب 159", active: true },
+            "W8H-512HY": { email: "student.fd160@academy.com", name: "متدرب 160", active: true },
+            "Q2X-937KJ": { email: "student.fe161@academy.com", name: "متدرب 161", active: true },
+            "Y9B-184DM": { email: "student.ff162@academy.com", name: "متدرب 162", active: true },
+            "X4M-625NC": { email: "student.fg163@academy.com", name: "متدرب 163", active: true },
+            "M1C-479NX": { email: "student.fh164@academy.com", name: "متدرب 164", active: true },
+            "K6J-813GL": { email: "student.fi165@academy.com", name: "متدرب 165", active: true },
+            "L3N-256WP": { email: "student.fj166@academy.com", name: "متدرب 166", active: true },
+            "P8Z-701TR": { email: "student.fk167@academy.com", name: "متدرب 167", active: true },
+            "R2T-495YH": { email: "student.fl168@academy.com", name: "متدرب 168", active: true },
+            "H6D-938FK": { email: "student.fm169@academy.com", name: "متدرب 169", active: true },
+            "Z1S-364QD": { email: "student.fn170@academy.com", name: "متدرب 170", active: true },
+            "C5V-187ZM": { email: "student.fo171@academy.com", name: "متدرب 171", active: true },
+            "V9F-621WS": { email: "student.fp172@academy.com", name: "متدرب 172", active: true },
+            "B2M-849JC": { email: "student.fq173@academy.com", name: "متدرب 173", active: true },
+            "N6X-305LV": { email: "student.fr174@academy.com", name: "متدرب 174", active: true },
+            "G3L-752GP": { email: "student.fs175@academy.com", name: "متدرب 175", active: true },
+            "T9P-184TN": { email: "student.ft176@academy.com", name: "متدرب 176", active: true },
+            "D4R-527RK": { email: "student.fu177@academy.com", name: "متدرب 177", active: true },
+            "F8K-961FD": { email: "student.fv178@academy.com", name: "متدرب 178", active: true },
+            "S1H-208LH": { email: "student.fw179@academy.com", name: "متدرب 179", active: true },
+            "W6X-493WP": { email: "student.fx180@academy.com", name: "متدرب 180", active: true },
+            "Q5B-731BC": { email: "student.fy181@academy.com", name: "متدرب 181", active: true },
+            "Y2M-168XF": { email: "student.fz182@academy.com", name: "متدرب 182", active: true },
+            "X7C-892GM": { email: "student.ga183@academy.com", name: "متدرب 183", active: true },
+            "M4J-315TR": { email: "student.gb184@academy.com", name: "متدرب 184", active: true },
+            "K9N-647PL": { email: "student.gc185@academy.com", name: "متدرب 185", active: true },
+            "L5Z-208HY": { email: "student.gd186@academy.com", name: "متدرب 186", active: true },
+            "P1T-593KJ": { email: "student.ge187@academy.com", name: "متدرب 187", active: true },
+            "R7D-834DM": { email: "student.gf188@academy.com", name: "متدرب 188", active: true },
+            "H2S-461NC": { email: "student.gg189@academy.com", name: "متدرب 189", active: true },
+            "Z6V-195NX": { email: "student.gh190@academy.com", name: "متدرب 190", active: true },
+            "C3K-728GL": { email: "student.gi191@academy.com", name: "متدرب 191", active: true },
+            "V7Q-942WP": { email: "student.gj192@academy.com", name: "متدرب 192", active: true },
+            "B4F-381TR": { email: "student.gk193@academy.com", name: "متدرب 193", active: true },
+            "N8M-619YH": { email: "student.gl194@academy.com", name: "متدرب 194", active: true },
+            "G1X-254FK": { email: "student.gm195@academy.com", name: "متدرب 195", active: true },
+            "T4L-807QD": { email: "student.gn196@academy.com", name: "متدرب 196", active: true },
+            "D2P-531ZM": { email: "student.go197@academy.com", name: "متدرب 197", active: true },
+            "F9R-168WS": { email: "student.gp198@academy.com", name: "متدرب 198", active: true },
+            "S6K-492JC": { email: "student.gq199@academy.com", name: "متدرب 199", active: true },
+            "W1H-835LV": { email: "student.gr200@academy.com", name: "متدرب 200", active: true }
         };
-
-        const lessonsLibrary = [
-            {
-                title: "الدرس الأول: تصميم الدورة المستندية للمشتريات والمخازن",
-                desc: "شرح عملي خطوة بخطوة لبناء دورة مستندية متكاملة على الإكسل وربطها بالمخازن.",
-                youtubeId: "dQw4w9WgXcQ",
-                files: [
-                    { name: "تحميل شيت الدورة المستندية (Excel)", driveId: "1A2B3C4D5E" },
-                    { name: "تحميل ملف الشرح (PDF)", driveId: "9Z8Y7X6W5V" }
-                ]
-            },
-            {
-                title: "الدرس الثاني: إعداد اليومية الأمريكية وميزان المراجعة",
-                desc: "كيفية تصميم يومية أمريكية ديناميكية وترحيل القيود تلقائياً لميزان المراجعة.",
-                youtubeId: "dQw4w9WgXcQ",
-                files: [
-                    { name: "تحميل نموذج اليومية الأمريكية (Excel)", driveId: "5T4R3E2W1Q" }
-                ]
-            }
-        ];
 
         function goToPortal() {
             document.getElementById("portal").scrollIntoView({ behavior: "smooth" });
         }
 
         function verifyCode() {
-            const code = document.getElementById("access-code").value.trim().toUpperCase();
+            const inputEmail = document.getElementById("user-email").value.trim().toLowerCase();
+            const inputCode = document.getElementById("access-code").value.trim().toUpperCase();
             const err = document.getElementById("error-msg");
 
-            if (subscribersCodes[code] && subscribersCodes[code].active) {
+            const subscriber = subscribersCodes[inputCode];
+
+            if (subscriber && subscriber.active && subscriber.email.toLowerCase() === inputEmail) {
+                const deviceToken = localStorage.getItem("active_device_" + inputCode);
+                const currentBrowserID = getBrowserSessionID();
+
+                if (deviceToken && deviceToken !== currentBrowserID) {
+                    err.style.display = "block";
+                    err.innerText = "عذراً، هذا الكود مستخدم بالفعل على جهاز/متصفح آخر ولا يمكن استخدامه من جهاز جديد.";
+                    return;
+                }
+
+                localStorage.setItem("active_device_" + inputCode, currentBrowserID);
+
                 err.style.display = "none";
                 document.getElementById("portal").style.display = "none";
                 document.getElementById("protected-viewer").style.display = "block";
-                document.getElementById("subscriber-welcome").innerText = "أهلاً بك يا أستاذ / " + subscribersCodes[code].name;
+                document.getElementById("subscriber-welcome").innerText = "أهلاً بك يا أستاذ / " + subscriber.name;
                 
-                renderTabs();
-                selectLesson(0);
+                document.getElementById("playlist-player").src = "https://www.youtube.com/embed/videoseries?list=PLWJF0bZDTAKw";
+                
                 document.getElementById("protected-viewer").scrollIntoView({ behavior: "smooth" });
             } else {
                 err.style.display = "block";
+                err.innerText = "البريد الإلكتروني أو كود التفعيل غير صحيح أو غير مطابق!";
             }
         }
 
-        function renderTabs() {
-            const container = document.getElementById("lessons-tabs");
-            container.innerHTML = "";
-            lessonsLibrary.forEach((item, idx) => {
-                const btn = document.createElement("button");
-                btn.className = "lesson-btn" + (idx === 0 ? " active" : "");
-                btn.innerText = "المحاضرة " + (idx + 1);
-                btn.onclick = () => {
-                    document.querySelectorAll(".lesson-btn").forEach(b => b.classList.remove("active"));
-                    btn.classList.add("active");
-                    selectLesson(idx);
-                };
-                container.appendChild(btn);
-            });
-        }
-
-        function selectLesson(idx) {
-            const lesson = lessonsLibrary[idx];
-            document.getElementById("video-player").src = `https://www.youtube.com/embed/${lesson.youtubeId}?rel=0`;
-            document.getElementById("current-lesson-title").innerText = lesson.title;
-            document.getElementById("current-lesson-desc").innerText = lesson.desc;
-
-            const filesDiv = document.getElementById("files-container");
-            filesDiv.innerHTML = "";
-            lesson.files.forEach(f => {
-                const a = document.createElement("a");
-                a.href = `https://drive.google.com/uc?export=download&id=${f.driveId}`;
-                a.className = "dl-link";
-                a.innerText = "📥 " + f.name;
-                filesDiv.appendChild(a);
-            });
+        function getBrowserSessionID() {
+            let sessionId = localStorage.getItem("browser_unique_id");
+            if (!sessionId) {
+                sessionId = 'ID-' + Math.random().toString(36).substr(2, 9) + Date.now();
+                localStorage.setItem("browser_unique_id", sessionId);
+            }
+            return sessionId;
         }
 
         function closeViewer() {
-            document.getElementById("video-player").src = "";
+            document.getElementById("playlist-player").src = "";
             document.getElementById("protected-viewer").style.display = "none";
             document.getElementById("portal").style.display = "block";
+            document.getElementById("user-email").value = "";
             document.getElementById("access-code").value = "";
         }
 
@@ -810,8 +990,9 @@
             appendReviewToDOM(reviewObj);
             
             document.getElementById("fb-name").value = "";
+            document.getElementById("fb-stars").selectedIndex = 0;
             document.getElementById("fb-msg").value = "";
-            alert("شكراً لك! تم إضافة تقييمك بنجاح.");
+            alert("شكراً لك! تم نشر تقييمك بنجاح.");
         }
 
         function loadSavedReviews() {
