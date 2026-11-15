@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أكاديمية كريم البرديسي | المحاسبة والخدمات الضريبية</title>
+    <title>أكاديمية كريم البرديسي | للتدريب والتطوير المهني والخدمات المحاسبيةوالضريبية</title>
     <style>
-        /* تعريف الألوان لكل من وضع النهار ووضع الليل */
+        /* نظام الألوان الاحترافي (نهاري / ليلي) */
         :root[data-theme="light"] {
-            --bg-main: #F8FAFC;
+            --bg-main: #F4F7F6;
             --card-bg: #FFFFFF;
             --text-main: #1E293B;
             --text-muted: #64748B;
             --border-color: #E2E8F0;
             --header-bg: #FFFFFF;
-            --hero-bg: linear-gradient(135deg, #0F2942 0%, #164E63 60%, #0D9488 100%);
+            --hero-bg: linear-gradient(135deg, #0F2942 0%, #164E63 60%, #20B2AA 100%);
             --input-bg: #F8FAFC;
         }
 
@@ -24,16 +24,18 @@
             --text-muted: #9CA3AF;
             --border-color: #1F2937;
             --header-bg: #111827;
-            --hero-bg: linear-gradient(135deg, #030712 0%, #0F172A 60%, #042F2E 100%);
+            --hero-bg: linear-gradient(135deg, #030712 0%, #0F172A 60%, #0D9488 100%);
             --input-bg: #1F2937;
         }
 
         :root {
-            --navy-primary: #0F2942;
-            --teal-accent: #0D9488;
-            --teal-hover: #0F766E;
-            --gold-badge: #D97706;
+            --navy: #0F2942;
+            --teal: #20B2AA;
+            --teal-dark: #178a84;
+            --gold: #D97706;
         }
+
+        * { box-sizing: border-box; }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -48,91 +50,80 @@
         /* الهيدر العلوي */
         header {
             background-color: var(--header-bg);
-            padding: 16px 35px;
-            border-bottom: 1px solid var(--border-color);
+            padding: 15px 30px;
+            border-bottom: 3px solid var(--teal);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
             position: sticky;
             top: 0;
-            z-index: 100;
-            transition: background-color 0.3s, border-color 0.3s;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
         }
 
         header h1 {
             margin: 0;
-            font-size: 21px;
+            font-size: 20px;
             color: var(--text-main);
-            font-weight: 700;
         }
 
-        .header-controls {
+        .nav-links {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            flex-wrap: wrap;
         }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 14px;
+            padding: 6px 10px;
+        }
+
+        .nav-links a:hover { color: var(--teal); }
 
         .btn-whatsapp {
-            background-color: #10B981;
-            color: white;
-            text-decoration: none;
-            padding: 8px 15px;
+            background-color: #25D366 !important;
+            color: white !important;
             border-radius: 6px;
-            font-size: 14px;
-            font-weight: 600;
+            padding: 8px 14px !important;
         }
 
-        .btn-portal {
-            background-color: var(--teal-accent);
+        .btn-portal-nav {
+            background-color: var(--teal);
             color: white;
             border: none;
-            padding: 8px 15px;
+            padding: 8px 14px;
             border-radius: 6px;
-            font-size: 14px;
-            font-weight: 600;
+            font-weight: bold;
             cursor: pointer;
+            font-size: 14px;
         }
 
-        /* زر تبديل وضع الليل */
-        .theme-toggle-btn {
+        .theme-btn {
             background: var(--border-color);
             border: none;
-            padding: 8px 12px;
+            padding: 7px 11px;
             border-radius: 6px;
             cursor: pointer;
             font-size: 16px;
             color: var(--text-main);
-            transition: background 0.2s;
         }
 
-        .theme-toggle-btn:hover {
-            opacity: 0.8;
-        }
-
-        /* قسم الترحيب الرئيسي */
+        /* الواجهة الرئيسية */
         .hero {
             background: var(--hero-bg);
             color: white;
             text-align: center;
-            padding: 65px 20px;
-            border-bottom: 4px solid var(--teal-accent);
+            padding: 60px 20px;
+            border-bottom: 4px solid var(--teal);
         }
 
-        .hero h2 {
-            font-size: 30px;
-            margin-bottom: 12px;
-            font-weight: 700;
-        }
+        .hero h2 { font-size: 28px; margin-bottom: 10px; }
+        .hero p { max-width: 650px; margin: 0 auto 20px; color: #E2E8F0; }
 
-        .hero p {
-            font-size: 17px;
-            max-width: 650px;
-            margin: 0 auto 20px auto;
-            color: #E2E8F0;
-        }
-
-        /* حاوية المحتوى */
         .container {
             max-width: 1120px;
             margin: 40px auto;
@@ -141,10 +132,9 @@
 
         .section-title {
             text-align: center;
-            margin-bottom: 35px;
-            color: var(--text-main);
             font-size: 24px;
-            position: relative;
+            margin-bottom: 30px;
+            color: var(--text-main);
         }
 
         .section-title::after {
@@ -152,200 +142,209 @@
             display: block;
             width: 60px;
             height: 3px;
-            background: var(--teal-accent);
-            margin: 10px auto 0;
-            border-radius: 2px;
+            background: var(--teal);
+            margin: 8px auto 0;
         }
 
-        /* بطاقات الكورسات */
-        .courses-grid {
+        /* شبكة البطاقات (مستويات الإكسل + الخدمات) */
+        .grid-3 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 22px;
             margin-bottom: 50px;
         }
 
-        .course-card {
+        .card {
             background: var(--card-bg);
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             border: 1px solid var(--border-color);
-            border-top: 4px solid var(--teal-accent);
+            border-top: 4px solid var(--teal);
+            border-radius: 10px;
+            padding: 24px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: transform 0.2s, background-color 0.3s, border-color 0.3s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            transition: transform 0.2s;
         }
 
-        .course-card:hover {
-            transform: translateY(-4px);
-        }
+        .card:hover { transform: translateY(-4px); }
+        .card h3 { margin-top: 0; color: var(--text-main); }
+        .card ul { padding-right: 20px; color: var(--text-muted); font-size: 14px; }
+        .card ul li { margin-bottom: 6px; }
 
-        .course-card h3 {
-            margin-top: 0;
-            color: var(--text-main);
-            font-size: 19px;
-        }
-
-        .course-card p {
-            color: var(--text-muted);
-            font-size: 15px;
-        }
-
-        .course-price {
-            font-weight: 700;
-            color: var(--gold-badge);
-            font-size: 15px;
-            margin: 12px 0;
-            background: rgba(217, 119, 6, 0.1);
+        .badge {
             display: inline-block;
+            background: rgba(217, 119, 6, 0.12);
+            color: var(--gold);
             padding: 4px 12px;
-            border-radius: 20px;
+            border-radius: 15px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 10px;
         }
 
-        .btn-action {
+        .btn-main {
             display: block;
             text-align: center;
-            background-color: var(--teal-accent);
+            background: var(--teal);
             color: white;
-            padding: 11px;
-            border-radius: 7px;
             text-decoration: none;
-            font-weight: 600;
+            padding: 10px;
+            border-radius: 6px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            font-size: 15px;
             margin-top: 15px;
-            transition: background 0.2s;
         }
 
-        .btn-action:hover {
-            background-color: var(--teal-hover);
-        }
+        .btn-main:hover { background: var(--teal-dark); }
 
-        /* صندوق إدخال الكود */
-        .portal-access-box {
+        /* بوابة المشتركين والأكواد */
+        .portal-box {
             background: var(--card-bg);
-            padding: 35px;
-            border-radius: 12px;
-            text-align: center;
-            max-width: 460px;
-            margin: 40px auto;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
             border: 1px solid var(--border-color);
-            border-top: 5px solid var(--teal-accent);
-            transition: background-color 0.3s, border-color 0.3s;
+            border-top: 5px solid var(--navy);
+            border-radius: 12px;
+            padding: 35px;
+            max-width: 480px;
+            margin: 40px auto;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
         }
 
-        .portal-access-box h3 {
-            color: var(--text-main);
-            margin-top: 0;
-        }
-
-        .portal-access-box input {
-            width: 82%;
-            padding: 13px;
+        .portal-box input {
+            width: 85%;
+            padding: 12px;
             border: 2px solid var(--border-color);
             border-radius: 8px;
+            background: var(--input-bg);
+            color: var(--text-main);
             font-size: 16px;
             text-align: center;
-            margin-bottom: 15px;
-            color: var(--text-main);
             font-weight: bold;
-            background-color: var(--input-bg);
-            transition: border-color 0.2s, background-color 0.3s;
+            margin: 15px 0;
         }
 
-        .portal-access-box input:focus {
-            outline: none;
-            border-color: var(--teal-accent);
-        }
+        .portal-box input:focus { outline: none; border-color: var(--teal); }
 
         #error-msg {
             color: #EF4444;
-            background-color: rgba(239, 68, 68, 0.1);
-            border: 1px solid rgba(239, 68, 68, 0.2);
+            background: rgba(239, 68, 68, 0.1);
             padding: 8px;
             border-radius: 6px;
             font-size: 14px;
-            margin-top: 12px;
+            margin-top: 10px;
             display: none;
         }
 
-        /* واجهة المشتركين الداخلية */
-        #protected-area {
+        /* نافذة استعراض الفيديوهات والملفات بعد التفعيل */
+        #protected-viewer {
             display: none;
             background: var(--card-bg);
-            padding: 30px;
-            border-radius: 12px;
-            margin-top: 25px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
             border: 1px solid var(--border-color);
-            transition: background-color 0.3s, border-color 0.3s;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
         }
 
-        .video-container {
+        .viewer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+        }
+
+        .lessons-bar {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .lesson-btn {
+            background: var(--input-bg);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .lesson-btn.active {
+            background: var(--teal);
+            color: white;
+            border-color: var(--teal);
+        }
+
+        .video-frame {
             position: relative;
             padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
-            border-radius: 10px;
+            border-radius: 8px;
             background: #000;
-            margin-bottom: 22px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            margin-bottom: 20px;
         }
 
-        .video-container iframe {
+        .video-frame iframe {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
         }
 
-        .file-btn {
+        .downloads-area {
+            background: var(--input-bg);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .dl-link {
             display: inline-block;
-            background-color: #15803D;
+            background: #15803D;
             color: white;
             text-decoration: none;
-            padding: 10px 18px;
+            padding: 9px 16px;
             border-radius: 6px;
             margin: 5px;
             font-size: 14px;
             font-weight: 600;
         }
 
-        .lessons-menu {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 22px;
+        /* نموذج آراء المتدربين والتواصل */
+        .feedback-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 650px;
+            margin: 40px auto;
         }
 
-        .lesson-tab {
-            padding: 9px 18px;
-            background: var(--input-bg);
+        .feedback-section input, .feedback-section textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 12px;
             border: 1px solid var(--border-color);
             border-radius: 6px;
-            cursor: pointer;
-            font-weight: 600;
+            background: var(--input-bg);
             color: var(--text-main);
-            transition: all 0.2s;
-        }
-
-        .lesson-tab.active {
-            background: var(--teal-accent);
-            color: white;
-            border-color: var(--teal-accent);
+            font-family: inherit;
         }
 
         footer {
+            background: var(--header-bg);
+            border-top: 1px solid var(--border-color);
             text-align: center;
             padding: 25px;
-            background: var(--header-bg);
-            margin-top: 60px;
             color: var(--text-muted);
             font-size: 14px;
-            border-top: 1px solid var(--border-color);
-            transition: background-color 0.3s;
+            margin-top: 50px;
         }
     </style>
 </head>
@@ -353,151 +352,261 @@
 
     <header>
         <h1>أكاديمية كريم البرديسي</h1>
-        <div class="header-controls">
-            <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()" title="تغيير الوضع">🌙</button>
+        <div class="nav-links">
+            <a href="#courses">المستويات التدريبية</a>
+            <a href="#services">الخدمات الضريبية</a>
+            <a href="#feedback">آراء المتدربين</a>
+            <button class="btn-portal-nav" onclick="goToPortal()">دخول المشتركين</button>
             <a href="https://wa.me/201000000000" target="_blank" class="btn-whatsapp">واتساب</a>
-            <button class="btn-portal" onclick="scrollToPortal()">منطقة المشتركين</button>
+            <button class="theme-btn" id="themeBtn" onclick="toggleTheme()" title="الوضع الليلي">🌙</button>
         </div>
     </header>
 
-    <div class="hero">
-        <h2>طريقك لاحتراف المحاسبة، الإكسل العملي، والخدمات الضريبية</h2>
-        <p>شرح واقعي من قلب سوق العمل المصري، وتطبيقات عملية جاهزة لرفع كفاءتك المهنية.</p>
-    </div>
+    <section class="hero">
+        <h2>التدريب المحاسبي والتقني المتكامل والخدمات الضريبية</h2>
+        <p>منهج عملي يجمع بين احتراف Microsoft Excel، تصميم الدورات المستندية، والعمل على المنظومات الضريبية المصرية.</p>
+    </section>
 
     <div class="container">
-        <h2 class="section-title">خدماتنا ودوراتنا التدريبية</h2>
-        
-        <div class="courses-grid">
-            <div class="course-card">
+
+        <!-- قسم مستويات التدريب (الهيكل الأصلي) -->
+        <h2 id="courses" class="section-title">مستويات التدريب العملي على Excel</h2>
+        <div class="grid-3">
+            <div class="card">
                 <div>
-                    <h3>كورس الدورة المستندية وتطبيقات الإكسل</h3>
-                    <p>تعلم تصميم الدورة المستندية للمشتريات والمبيعات والمخازن على الإكسل بخطوات عملية.</p>
+                    <span class="badge">المستوى الأول</span>
+                    <h3>الأساسيات والتنسيق الاحترافي</h3>
+                    <ul>
+                        <li>بناء الجداول المحاسبية وتنسيق البيانات.</li>
+                        <li>التحقق من صحة البيانات (Data Validation).</li>
+                        <li>الدوال الحسابية والمنطقية الأساسية.</li>
+                    </ul>
                 </div>
-                <div>
-                    <div class="course-price">متاح للمشتركين</div>
-                    <a href="#portal" class="btn-action" onclick="scrollToPortal()">دخول المحتوى</a>
-                </div>
+                <a href="https://wa.me/201000000000?text=أرغب%20في%20حجز%20المستوى%20الأول" target="_blank" class="btn-main">احجز عبر واتساب</a>
             </div>
 
-            <div class="course-card">
+            <div class="card">
                 <div>
-                    <h3>الخدمات الضريبية وإعداد الإقرارات</h3>
-                    <p>استشارات وإعداد للإقرارات الضريبية الشهرية والسنوية ومنظومة الفاتورة الإلكترونية.</p>
+                    <span class="badge">المستوى الثاني</span>
+                    <h3>التحليل والدوال المتقدمة</h3>
+                    <ul>
+                        <li>دوال البحث الديناميكية (VLOOKUP, INDEX & MATCH).</li>
+                        <li>الجداول المحورية (Pivot Tables) والتقارير.</li>
+                        <li>تصميم شيتات المخازن وحركة النقدية.</li>
+                    </ul>
                 </div>
-                <div>
-                    <div class="course-price">حسب الخدمة</div>
-                    <a href="https://wa.me/201000000000" target="_blank" class="btn-action">اطلب الخدمة الآن</a>
-                </div>
+                <a href="https://wa.me/201000000000?text=أرغب%20في%20حجز%20المستوى%20الثاني" target="_blank" class="btn-main">احجز عبر واتساب</a>
             </div>
 
-            <div class="course-card">
+            <div class="card">
                 <div>
-                    <h3>شيتات الإكسل المحاسبية المتقدمة</h3>
-                    <p>نماذج جاهزة ومبرمجة لتسهيل الحسابات، حركة النقدية، وإصدار التقارير اليومية.</p>
+                    <span class="badge">المستوى الثالث</span>
+                    <h3>الأتمتة والدورات المستندية الكاملة</h3>
+                    <ul>
+                        <li>تصميم اليومية الأمريكية وميزان المراجعة.</li>
+                        <li>ربط الشيتات المتعددة واستخدام Power Query.</li>
+                        <li>تطبيقات عملية لشركات المقاولات والتجارة.</li>
+                    </ul>
                 </div>
-                <div>
-                    <div class="course-price">حصري للمشتركين</div>
-                    <a href="#portal" class="btn-action" onclick="scrollToPortal()">تحميل النماذج</a>
-                </div>
+                <a href="https://wa.me/201000000000?text=أرغب%20في%20حجز%20المستوى%20الثالث" target="_blank" class="btn-main">احجز عبر واتساب</a>
             </div>
         </div>
 
-        <div id="portal" class="portal-access-box">
-            <h3>بوابة المشتركين والطلاب</h3>
-            <p style="font-size: 13px; color: var(--text-muted);">أدخل كود التفعيل الخاص بك للاطلاع على الفيديوهات وملفات العمل المرفقة.</p>
-            <input type="text" id="user-code" placeholder="أدخل كود التفعيل (مثال: KAREEM-101)">
-            <br>
-            <button class="btn-action" style="width: 87%; margin: 0 auto; border:none; cursor:pointer;" onclick="checkAccessCode()">عرض المحتوى</button>
-            <div id="error-msg">الكود غير صحيح أو منتهي الصلاحية. تواصل معنا للحصول على كودك.</div>
+        <!-- قسم الخدمات المحاسبية والضريبية -->
+        <h2 id="services" class="section-title">الخدمات المحاسبية والضريبية والنماذج الجاهزة</h2>
+        <div class="grid-3">
+            <div class="card">
+                <div>
+                    <span class="badge">خدمات ضريبية</span>
+                    <h3>الإقرارات الضريبية والفاتورة الإلكترونية</h3>
+                    <p style="color: var(--text-muted); font-size: 14px;">إعداد وتقديم إقرارات القيمة المضافة، ضريبة الدخل، والتسويات الضريبية للشركات والأفراد.</p>
+                </div>
+                <a href="https://wa.me/201000000000?text=استفسار%20عن%20الخدمات%20الضريبية" target="_blank" class="btn-main">اطلب الخدمة</a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <span class="badge">أنظمة مخصصة</span>
+                    <h3>تصميم برامج Excel و Access للشركات</h3>
+                    <p style="color: var(--text-muted); font-size: 14px;">بناء قواعد بيانات وأنظمة حسابات ومخازن مخصصة حسب طبيعة نشاط شركتك.</p>
+                </div>
+                <a href="https://wa.me/201000000000?text=أرغب%20في%20تصميم%20نظام%20محاسبي" target="_blank" class="btn-main">تواصل للتنفيذ</a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <span class="badge">حصري للمشتركين</span>
+                    <h3>مكتبة الفيديوهات والشيتات التطبيقية</h3>
+                    <p style="color: var(--text-muted); font-size: 14px;">شاهد محاضرات الشرح وحمّل ملفات العمل مباشرة باستخدام كود التفعيل الخاص بك.</p>
+                </div>
+                <button class="btn-main" onclick="goToPortal()">افتح البوابة بالكود</button>
+            </div>
         </div>
 
-        <div id="protected-area">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 2px solid var(--border-color); padding-bottom: 10px;">
-                <h3 id="welcome-msg" style="margin: 0; color: var(--teal-accent);">مرحباً بك!</h3>
-                <button onclick="logoutPortal()" style="background: #EF4444; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer;">إغلاق / خروج</button>
+        <!-- بوابة التحقق بالكود الفريد -->
+        <div id="portal" class="portal-box">
+            <h3>بوابة المشتركين والعملاء</h3>
+            <p style="font-size: 14px; color: var(--text-muted);">أدخل كود التفعيل الخاص بك لفتح نافذة المشاهدة وتحميل ملفات العمل</p>
+            <input type="text" id="access-code" placeholder="أدخل الكود هنا (مثال: KAREEM-101)">
+            <button class="btn-main" onclick="verifyCode()">تفعيل والدخول للمحتوى</button>
+            <div id="error-msg">الكود غير صحيح أو غير مفعل. تواصل معنا عبر واتساب للحصول على كودك.</div>
+        </div>
+
+        <!-- نافذة عرض المحتوى (تظهر بعد إدخال الكود الصحيح) -->
+        <div id="protected-viewer">
+            <div class="viewer-header">
+                <h3 id="subscriber-welcome" style="margin: 0; color: var(--teal);">مرحباً بك!</h3>
+                <button onclick="closeViewer()" style="background: #EF4444; color: white; border: none; padding: 6px 14px; border-radius: 5px; cursor: pointer;">تسجيل خروج</button>
             </div>
 
-            <div class="lessons-menu" id="lessons-tabs"></div>
+            <!-- أزرار الدروس -->
+            <div class="lessons-bar" id="lessons-tabs"></div>
 
-            <div class="video-container">
-                <iframe id="lesson-video" src="" frameborder="0" allowfullscreen></iframe>
+            <!-- مشغل الفيديو المدمج -->
+            <div class="video-frame">
+                <iframe id="video-player" src="" frameborder="0" allowfullscreen></iframe>
             </div>
 
-            <h3 id="lesson-title">عنوان الدرس</h3>
-            <p id="lesson-desc" style="color: var(--text-muted);"></p>
+            <h3 id="current-lesson-title">عنوان الدرس</h3>
+            <p id="current-lesson-desc" style="color: var(--text-muted);"></p>
 
-            <div style="margin-top: 20px; background: var(--input-bg); padding: 15px; border-radius: 8px; border: 1px solid var(--border-color);">
-                <strong style="color: var(--text-main);">📁 ملفات وشيتات الإكسل الخاصة بهذا الدرس:</strong><br>
-                <div id="lesson-files-box" style="margin-top: 10px;"></div>
+            <!-- ملفات التحميل المباشر من جوجل درايف -->
+            <div class="downloads-area">
+                <strong>📁 ملفات وشيتات العمل المرفقة للتحميل المباشر:</strong><br>
+                <div id="files-container" style="margin-top: 8px;"></div>
             </div>
+        </div>
+
+        <!-- قسم آراء المتدربين (من هيكل صفحتك الأصلي) -->
+        <div id="feedback" class="feedback-section">
+            <h3 style="margin-top: 0; text-align: center;">شاركنا رأيك أو استفسارك</h3>
+            <form onsubmit="sendFeedback(event)">
+                <input type="text" id="fb-name" placeholder="الاسم الكريم" required>
+                <textarea id="fb-msg" rows="3" placeholder="اكتب تقييمك للدورة أو استفسارك..." required></textarea>
+                <button type="submit" class="btn-main">إرسال عبر واتساب</button>
+            </form>
         </div>
 
     </div>
 
     <footer>
-        <p>© 2026 جميع الحقوق محفوظة لـ كريم البرديسي – المحاسبة والخدمات التدريبية</p>
+        <p>© 2026 أكاديمية كريم البرديسي للتدريب المحاسبي والتقني والخدمات الضريبية</p>
     </footer>
 
     <script>
-        // دالة تبديل وضع الليل والنهار وحفظ الاختيار في متصفح المستخدم
+        // 1. التحكم في وضع الليل والنهار
         function toggleTheme() {
             const html = document.documentElement;
-            const currentTheme = html.getAttribute("data-theme");
-            const toggleBtn = document.getElementById("themeToggle");
-
-            if (currentTheme === "light") {
-                html.setAttribute("data-theme", "dark");
-                toggleBtn.innerText = "☀️";
-                localStorage.setItem("theme", "dark");
-            } else {
-                html.setAttribute("data-theme", "light");
-                toggleBtn.innerText = "🌙";
-                localStorage.setItem("theme", "light");
-            }
+            const isDark = html.getAttribute("data-theme") === "dark";
+            const newTheme = isDark ? "light" : "dark";
+            html.setAttribute("data-theme", newTheme);
+            document.getElementById("themeBtn").innerText = newTheme === "dark" ? "☀️" : "🌙";
+            localStorage.setItem("academy_theme", newTheme);
         }
 
-        // استرجاع الوضع المفضل للمستخدم عند فتح الصفحة
         window.addEventListener("DOMContentLoaded", () => {
-            const savedTheme = localStorage.getItem("theme") || "light";
-            document.documentElement.setAttribute("data-theme", savedTheme);
-            document.getElementById("themeToggle").innerText = savedTheme === "dark" ? "☀️" : "🌙";
+            const saved = localStorage.getItem("academy_theme") || "light";
+            document.documentElement.setAttribute("data-theme", saved);
+            document.getElementById("themeBtn").innerText = saved === "dark" ? "☀️" : "🌙";
         });
 
-        const activeCodesDatabase = {
-            "KAREEM-101": { name: "أحمد محمد", active: true },
-            "TAX-2026":   { name: "محمود إبراهيم", active: true },
-            "VIP-999":    { name: "عميل مميز", active: true }
+        // 2. قاعدة بيانات الأكواد المخصصة لكل متدرب أو عميل (تتحكم فيها بسهولة)
+        const subscribersCodes = {
+            "KAREEM-101": { name: "أحمد علي", active: true },
+            "EXCEL-2026": { name: "محمود حسن", active: true },
+            "TAX-500":    { name: "سارة إبراهيم", active: false } // مثال لكود موقوف
         };
 
-        const courseData = [
+        // 3. قائمة الفيديوهات (YouTube ID) والملفات (Google Drive ID)
+        const lessonsLibrary = [
             {
-                title: "الدرس الأول: الدورة المستندية للمشتريات",
-                desc: "شرح تفصيلي لكيفية إثبات فاتورة الشراء وحركة المخازن وتسجيلها على الإكسل.",
-                youtubeId: "dQw4w9WgXcQ",
+                title: "الدرس الأول: تصميم الدورة المستندية للمشتريات والمخازن",
+                desc: "شرح عملي خطوة بخطوة لبناء دورة مستندية متكاملة على الإكسل وربطها بالمخازن.",
+                youtubeId: "dQw4w9WgXcQ", // ضع هنا ID فيديو يوتيوب (غير مدرج)
                 files: [
-                    { name: "تحميل شيت المشتريات (Excel)", id: "1A2B3C4D5E" },
-                    { name: "تحميل دليل الشرح (PDF)", id: "9Z8Y7X6W5V" }
+                    { name: "تحميل شيت الدورة المستندية (Excel)", driveId: "1A2B3C4D5E" },
+                    { name: "تحميل ملف الشرح (PDF)", driveId: "9Z8Y7X6W5V" }
                 ]
             },
             {
-                title: "الدرس الثاني: إعداد شجرة الحسابات",
-                desc: "طريقة بناء دليل حسابات احترافي متناسق مع أنشطة الشركات المختلفة.",
+                title: "الدرس الثاني: إعداد اليومية الأمريكية وميزان المراجعة",
+                desc: "كيفية تصميم يومية أمريكية ديناميكية وترحيل القيود تلقائياً لميزان المراجعة.",
                 youtubeId: "dQw4w9WgXcQ",
                 files: [
-                    { name: "تحميل نموذج شجرة الحسابات (Excel)", id: "5T4R3E2W1Q" }
+                    { name: "تحميل نموذج اليومية الأمريكية (Excel)", driveId: "5T4R3E2W1Q" }
                 ]
             }
         ];
 
-        function scrollToPortal() {
-            document.getElementById('portal').scrollIntoView({ behavior: 'smooth' });
+        function goToPortal() {
+            document.getElementById("portal").scrollIntoView({ behavior: "smooth" });
         }
 
-        function checkAccessCode() {
-            const inputVal = document.getElementById("user-code").value.trim().toUpperCase();
-            const errorBox = document.getElementById("error-msg");
+        function verifyCode() {
+            const code = document.getElementById("access-code").value.trim().toUpperCase();
+            const err = document.getElementById("error-msg");
 
-            if (activeCodesDatabase[inputVal] && activeCodesDatabase[inputVal].active) {
-                errorBox.style.display = "none";
-                document
+            if (subscribersCodes[code] && subscribersCodes[code].active) {
+                err.style.display = "none";
+                document.getElementById("portal").style.display = "none";
+                document.getElementById("protected-viewer").style.display = "block";
+                document.getElementById("subscriber-welcome").innerText = "أهلاً بك يا أستاذ / " + subscribersCodes[code].name;
+                
+                renderTabs();
+                selectLesson(0);
+                document.getElementById("protected-viewer").scrollIntoView({ behavior: "smooth" });
+            } else {
+                err.style.display = "block";
+            }
+        }
+
+        function renderTabs() {
+            const container = document.getElementById("lessons-tabs");
+            container.innerHTML = "";
+            lessonsLibrary.forEach((item, idx) => {
+                const btn = document.createElement("button");
+                btn.className = "lesson-btn" + (idx === 0 ? " active" : "");
+                btn.innerText = "المحاضرة " + (idx + 1);
+                btn.onclick = () => {
+                    document.querySelectorAll(".lesson-btn").forEach(b => b.classList.remove("active"));
+                    btn.classList.add("active");
+                    selectLesson(idx);
+                };
+                container.appendChild(btn);
+            });
+        }
+
+        function selectLesson(idx) {
+            const lesson = lessonsLibrary[idx];
+            document.getElementById("video-player").src = `https://www.youtube.com/embed/${lesson.youtubeId}?rel=0`;
+            document.getElementById("current-lesson-title").innerText = lesson.title;
+            document.getElementById("current-lesson-desc").innerText = lesson.desc;
+
+            const filesDiv = document.getElementById("files-container");
+            filesDiv.innerHTML = "";
+            lesson.files.forEach(f => {
+                const a = document.createElement("a");
+                a.href = `https://drive.google.com/uc?export=download&id=${f.driveId}`;
+                a.className = "dl-link";
+                a.innerText = "📥 " + f.name;
+                filesDiv.appendChild(a);
+            });
+        }
+
+        function closeViewer() {
+            document.getElementById("video-player").src = "";
+            document.getElementById("protected-viewer").style.display = "none";
+            document.getElementById("portal").style.display = "block";
+            document.getElementById("access-code").value = "";
+        }
+
+        function sendFeedback(e) {
+            e.preventDefault();
+            const name = document.getElementById("fb-name").value;
+            const msg = document.getElementById("fb-msg").value;
+            const text = encodeURIComponent(`مرحباً أستاذ كريم، أنا ${name}:\n${msg}`);
+            window.open(`https://wa.me/201145970140?text=${text}`, "_blank");
+        }
+    </script>
+</body>
+</html>
