@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أكاديمية كريم البرديسي | للتدريب والتطوير المهني والخدمات المحاسبيةوالضريبية</title>
+    <title>أكاديمية كريم البرديسي | التدريب المحاسبي والخدمات الضريبية</title>
     <style>
-        /* نظام الألوان الاحترافي (نهاري / ليلي) */
         :root[data-theme="light"] {
             --bg-main: #F4F7F6;
             --card-bg: #FFFFFF;
@@ -84,11 +83,24 @@
 
         .nav-links a:hover { color: var(--teal); }
 
-        .btn-whatsapp {
+        /* أيقونة واتساب العصرية */
+        .btn-whatsapp-icon {
             background-color: #25D366 !important;
             color: white !important;
-            border-radius: 6px;
-            padding: 8px 14px !important;
+            border-radius: 50% !important;
+            width: 38px;
+            height: 38px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            text-decoration: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .btn-whatsapp-icon:hover {
+            transform: scale(1.08);
         }
 
         .btn-portal-nav {
@@ -117,22 +129,38 @@
             background: var(--hero-bg);
             color: white;
             text-align: center;
-            padding: 60px 20px;
+            padding: 65px 20px;
             border-bottom: 4px solid var(--teal);
         }
 
-        .hero h2 { font-size: 28px; margin-bottom: 10px; }
-        .hero p { max-width: 650px; margin: 0 auto 20px; color: #E2E8F0; }
+        .hero h2 { font-size: 29px; margin-bottom: 12px; }
+        .hero p { max-width: 680px; margin: 0 auto 20px; color: #E2E8F0; font-size: 17px; }
 
         .container {
-            max-width: 1120px;
+            max-width: 1140px;
             margin: 40px auto;
             padding: 0 20px;
         }
 
+        .main-section-title {
+            text-align: center;
+            font-size: 28px;
+            margin: 50px 0 25px 0;
+            color: var(--navy);
+            background: var(--card-bg);
+            padding: 15px;
+            border-radius: 10px;
+            border-right: 6px solid var(--teal);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+
+        :root[data-theme="dark"] .main-section-title {
+            color: var(--teal);
+        }
+
         .section-title {
             text-align: center;
-            font-size: 24px;
+            font-size: 23px;
             margin-bottom: 30px;
             color: var(--text-main);
         }
@@ -140,18 +168,77 @@
         .section-title::after {
             content: '';
             display: block;
-            width: 60px;
+            width: 55px;
             height: 3px;
             background: var(--teal);
             margin: 8px auto 0;
         }
 
-        /* شبكة البطاقات (مستويات الإكسل + الخدمات) */
+        /* قسم تعريف المدرب */
+        .instructor-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-right: 6px solid var(--teal);
+            border-radius: 12px;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+        }
+
+        @media (max-width: 768px) {
+            .instructor-card { flex-direction: column; text-align: center; }
+        }
+
+        .instructor-img {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--teal);
+            flex-shrink: 0;
+            background-color: var(--input-bg);
+        }
+
+        .instructor-info h3 {
+            margin: 0 0 8px 0;
+            font-size: 24px;
+            color: var(--teal);
+        }
+
+        .instructor-subtitle {
+            font-weight: bold;
+            color: var(--gold);
+            margin-bottom: 15px;
+            display: block;
+            font-size: 15px;
+        }
+
+        .exp-list {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0 0 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 10px;
+        }
+
+        .exp-list li {
+            background: var(--input-bg);
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 14px;
+            border: 1px solid var(--border-color);
+        }
+
+        /* شبكة البطاقات */
         .grid-3 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 22px;
-            margin-bottom: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
         }
 
         .card {
@@ -159,7 +246,7 @@
             border: 1px solid var(--border-color);
             border-top: 4px solid var(--teal);
             border-radius: 10px;
-            padding: 24px;
+            padding: 25px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -168,9 +255,9 @@
         }
 
         .card:hover { transform: translateY(-4px); }
-        .card h3 { margin-top: 0; color: var(--text-main); }
-        .card ul { padding-right: 20px; color: var(--text-muted); font-size: 14px; }
-        .card ul li { margin-bottom: 6px; }
+        .card h3 { margin-top: 0; color: var(--text-main); font-size: 19px; }
+        .card ul { padding-right: 18px; color: var(--text-muted); font-size: 14.5px; }
+        .card ul li { margin-bottom: 8px; }
 
         .badge {
             display: inline-block;
@@ -189,7 +276,7 @@
             background: var(--teal);
             color: white;
             text-decoration: none;
-            padding: 10px;
+            padding: 11px;
             border-radius: 6px;
             font-weight: bold;
             border: none;
@@ -197,6 +284,7 @@
             width: 100%;
             font-size: 15px;
             margin-top: 15px;
+            transition: background 0.2s;
         }
 
         .btn-main:hover { background: var(--teal-dark); }
@@ -239,7 +327,7 @@
             display: none;
         }
 
-        /* نافذة استعراض الفيديوهات والملفات بعد التفعيل */
+        /* نافذة استعراض الفيديوهات والملفات */
         #protected-viewer {
             display: none;
             background: var(--card-bg);
@@ -316,17 +404,35 @@
             font-weight: 600;
         }
 
-        /* نموذج آراء المتدربين والتواصل */
+        /* قسم آراء المتدربين */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .review-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+
+        .review-stars { color: #F59E0B; font-size: 16px; margin-bottom: 8px; }
+        .review-author { font-weight: bold; color: var(--teal); font-size: 15px; margin-top: 10px; display: block; }
+
         .feedback-section {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 12px;
             padding: 30px;
             max-width: 650px;
-            margin: 40px auto;
+            margin: 20px auto;
         }
 
-        .feedback-section input, .feedback-section textarea {
+        .feedback-section input, .feedback-section select, .feedback-section textarea {
             width: 100%;
             padding: 12px;
             margin-bottom: 12px;
@@ -353,148 +459,238 @@
     <header>
         <h1>أكاديمية كريم البرديسي</h1>
         <div class="nav-links">
-            <a href="#courses">المستويات التدريبية</a>
-            <a href="#services">الخدمات الضريبية</a>
-            <a href="#feedback">آراء المتدربين</a>
+            <a href="#about">عن المحاضر</a>
+            <a href="#education">التعليم والتدريب</a>
+            <a href="#tax-services">الخدمات الضريبية</a>
+            <a href="#reviews">آراء المتدربين</a>
             <button class="btn-portal-nav" onclick="goToPortal()">دخول المشتركين</button>
-            <a href="https://wa.me/201000000000" target="_blank" class="btn-whatsapp">واتساب</a>
+            <a href="https://wa.me/201145970140" target="_blank" class="btn-whatsapp-icon" title="تواصل عبر واتساب">💬</a>
             <button class="theme-btn" id="themeBtn" onclick="toggleTheme()" title="الوضع الليلي">🌙</button>
         </div>
     </header>
 
     <section class="hero">
         <h2>التدريب المحاسبي والتقني المتكامل والخدمات الضريبية</h2>
-        <p>منهج عملي يجمع بين احتراف Microsoft Excel، تصميم الدورات المستندية، والعمل على المنظومات الضريبية المصرية.</p>
+        <p>خبرة عملية من قلب سوق العمل المصري لتأهيل المحاسبين وتصميم الأنظمة المالية وإدارة الملفات الضريبية باحترافية.</p>
     </section>
 
     <div class="container">
 
-        <!-- قسم مستويات التدريب (الهيكل الأصلي) -->
-        <h2 id="courses" class="section-title">مستويات التدريب العملي على Excel</h2>
-        <div class="grid-3">
-            <div class="card">
-                <div>
-                    <span class="badge">المستوى الأول</span>
-                    <h3>الأساسيات والتنسيق الاحترافي</h3>
-                    <ul>
-                        <li>بناء الجداول المحاسبية وتنسيق البيانات.</li>
-                        <li>التحقق من صحة البيانات (Data Validation).</li>
-                        <li>الدوال الحسابية والمنطقية الأساسية.</li>
-                    </ul>
-                </div>
-                <a href="https://wa.me/201000000000?text=أرغب%20في%20حجز%20المستوى%20الأول" target="_blank" class="btn-main">احجز عبر واتساب</a>
-            </div>
-
-            <div class="card">
-                <div>
-                    <span class="badge">المستوى الثاني</span>
-                    <h3>التحليل والدوال المتقدمة</h3>
-                    <ul>
-                        <li>دوال البحث الديناميكية (VLOOKUP, INDEX & MATCH).</li>
-                        <li>الجداول المحورية (Pivot Tables) والتقارير.</li>
-                        <li>تصميم شيتات المخازن وحركة النقدية.</li>
-                    </ul>
-                </div>
-                <a href="https://wa.me/201000000000?text=أرغب%20في%20حجز%20المستوى%20الثاني" target="_blank" class="btn-main">احجز عبر واتساب</a>
-            </div>
-
-            <div class="card">
-                <div>
-                    <span class="badge">المستوى الثالث</span>
-                    <h3>الأتمتة والدورات المستندية الكاملة</h3>
-                    <ul>
-                        <li>تصميم اليومية الأمريكية وميزان المراجعة.</li>
-                        <li>ربط الشيتات المتعددة واستخدام Power Query.</li>
-                        <li>تطبيقات عملية لشركات المقاولات والتجارة.</li>
-                    </ul>
-                </div>
-                <a href="https://wa.me/201000000000?text=أرغب%20في%20حجز%20المستوى%20الثالث" target="_blank" class="btn-main">احجز عبر واتساب</a>
+        <!-- قسم تعريف المدرب وخبراته -->
+        <h2 id="about" class="section-title">عن المحاضر والمدرب</h2>
+        <div class="instructor-card">
+            <img src="profile.jpg" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png'" alt="كريم محمود البرديسي" class="instructor-img">
+            <div class="instructor-info">
+                <h3>أ / كريم محمود البرديسي</h3>
+                <span class="instructor-subtitle">محاسب عام ومستشار ضريبي | مدرب معتمد من المجلس الدولي للمدربين المعتمدين (IBCT)</span>
+                <p style="color: var(--text-muted); margin: 0;">
+                    متخصص في المحاسبة المالية، تصميم الدورات المستندية، وبناء أنظمة الحسابات والمخازن باستخدام Microsoft Excel و Access، مع خبرة عملية واسعة في التعامل مع البوابة الإلكترونية لمصلحة الضرائب المصرية والفاتورة الإلكترونية.
+                </p>
+                <ul class="exp-list">
+                    <li><strong>🎓 الاعتماد الدولي:</strong> مدرب معتمد (TOT) من البورد الدولي IBCT.</li>
+                    <li><strong>💼 الخبرة المحاسبية:</strong> محاسب عام ومصمم أنظمة مالية لشركات التجارة والمقاولات.</li>
+                    <li><strong>🧾 الخبرة الضريبية:</strong> إعداد الإقرارات الضريبية والتسويات الضريبية.</li>
+                    <li><strong>🏛️ سابقة الأعمال:</strong> تقديم برامج تدريبية في وحدات التضامن الاجتماعي، والمبادرات الشبابية.</li>
+                </ul>
             </div>
         </div>
 
-        <!-- قسم الخدمات المحاسبية والضريبية -->
-        <h2 id="services" class="section-title">الخدمات المحاسبية والضريبية والنماذج الجاهزة</h2>
-        <div class="grid-3">
-            <div class="card">
-                <div>
-                    <span class="badge">خدمات ضريبية</span>
-                    <h3>الإقرارات الضريبية والفاتورة الإلكترونية</h3>
-                    <p style="color: var(--text-muted); font-size: 14px;">إعداد وتقديم إقرارات القيمة المضافة، ضريبة الدخل، والتسويات الضريبية للشركات والأفراد.</p>
+        <!-- ================= القسم الأول: التدريب والتعليم ================= -->
+        <div id="education">
+            <h2 class="main-section-title">📚 أولاً: قسم التدريب والتعليم (الكورسات والمستويات)</h2>
+            <h3 class="section-title">مستويات التدريب العملي على Microsoft Excel</h3>
+            
+            <div class="grid-3">
+                <div class="card">
+                    <div>
+                        <span class="badge">المستوى الأول (التأسيسي)</span>
+                        <h3>الأساسيات والتنسيق المحاسبي</h3>
+                        <ul>
+                            <li>التعرف على واجهة البرنامج واختصارات لوحة المفاتيح.</li>
+                            <li>تنسيق الجداول المحاسبية والتنسيق الشرطي.</li>
+                            <li>التحقق من صحة البيانات (Data Validation).</li>
+                            <li>الدوال الحسابية والمنطقية الأساسية (SUM, IF).</li>
+                            <li>إعداد الطباعة والتقارير الرسمية.</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/201145970140?text=مرحباً%20أستاذ%20كريم،%20أرغب%20في%20حجز%20المستوى%20الأول%20من%20دورة%20Excel" target="_blank" class="btn-main">احجز المستوى الأول عبر واتساب</a>
                 </div>
-                <a href="https://wa.me/201000000000?text=استفسار%20عن%20الخدمات%20الضريبية" target="_blank" class="btn-main">اطلب الخدمة</a>
+
+                <div class="card">
+                    <div>
+                        <span class="badge">المستوى الثاني (المتوسط)</span>
+                        <h3>التحليل المالي والدوال المتقدمة</h3>
+                        <ul>
+                            <li>الدوال الشرطية المركبة (SUMIFS, COUNTIFS).</li>
+                            <li>دوال البحث الديناميكية (VLOOKUP, XLOOKUP).</li>
+                            <li>تحليل البيانات بواسطة الجداول المحورية (Pivot Tables).</li>
+                            <li>حماية المعادلات وأوراق العمل.</li>
+                            <li>تطبيق عملي: تصميم شيت النقدية والعملاء والموردين.</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/201145970140?text=مرحباً%20أستاذ%20كريم،%20أرغب%20في%20حجز%20المستوى%20الثاني%20من%20دورة%20Excel" target="_blank" class="btn-main">احجز المستوى الثاني عبر واتساب</a>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <span class="badge">المستوى الثالث (الاحترافي)</span>
+                        ### الأتمتة والدورات المستندية الكاملة
+                        <ul>
+                            <li>تصميم اليومية الأمريكية وميزان المراجعة.</li>
+                            <li>إعداد القوائم المالية (الدخل والمركز المالي).</li>
+                            <li>تجميع البيانات باستخدام Power Query.</li>
+                            <li>تسجيل الماكرو (Macros) لأتمتة المهام.</li>
+                            <li>مشروع التخرج: نظام متكامل للمخازن والمشتريات.</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/201145970140?text=مرحباً%20أستاذ%20كريم،%20أرغب%20في%20حجز%20المستوى%20الثالث%20من%20دورة%20Excel" target="_blank" class="btn-main">احجز المستوى الثالث عبر واتساب</a>
+                </div>
             </div>
 
-            <div class="card">
-                <div>
-                    <span class="badge">أنظمة مخصصة</span>
-                    <h3>تصميم برامج Excel و Access للشركات</h3>
-                    <p style="color: var(--text-muted); font-size: 14px;">بناء قواعد بيانات وأنظمة حسابات ومخازن مخصصة حسب طبيعة نشاط شركتك.</p>
-                </div>
-                <a href="https://wa.me/201000000000?text=أرغب%20في%20تصميم%20نظام%20محاسبي" target="_blank" class="btn-main">تواصل للتنفيذ</a>
+            <!-- بوابة المشتركين والأكواد -->
+            <div id="portal" class="portal-box">
+                <h3>بوابة المشتركين والطلاب (المحتوى الخاص)</h3>
+                <p style="font-size: 14px; color: var(--text-muted);">أدخل كود التفعيل الخاص بك لفتح نافذة المشاهدة وتحميل ملفات العمل</p>
+                <input type="text" id="access-code" placeholder="أدخل الكود هنا (مثال: KAREEM-101)">
+                <button class="btn-main" onclick="verifyCode()">تفعيل والدخول للمحتوى</button>
+                <div id="error-msg">الكود غير صحيح أو غير مفعل. تواصل معنا عبر واتساب للحصول على كودك.</div>
             </div>
 
-            <div class="card">
-                <div>
-                    <span class="badge">حصري للمشتركين</span>
-                    <h3>مكتبة الفيديوهات والشيتات التطبيقية</h3>
-                    <p style="color: var(--text-muted); font-size: 14px;">شاهد محاضرات الشرح وحمّل ملفات العمل مباشرة باستخدام كود التفعيل الخاص بك.</p>
+            <!-- نافذة عرض المحتوى (تظهر بعد إدخال الكود الصحيح) -->
+            <div id="protected-viewer">
+                <div class="viewer-header">
+                    <h3 id="subscriber-welcome" style="margin: 0; color: var(--teal);">مرحباً بك!</h3>
+                    <button onclick="closeViewer()" style="background: #EF4444; color: white; border: none; padding: 6px 14px; border-radius: 5px; cursor: pointer;">تسجيل خروج</button>
                 </div>
-                <button class="btn-main" onclick="goToPortal()">افتح البوابة بالكود</button>
+
+                <div class="lessons-bar" id="lessons-tabs"></div>
+
+                <div class="video-frame">
+                    <iframe id="video-player" src="" frameborder="0" allowfullscreen></iframe>
+                </div>
+
+                <h3 id="current-lesson-title">عنوان الدرس</h3>
+                <p id="current-lesson-desc" style="color: var(--text-muted);"></p>
+
+                <div class="downloads-area">
+                    <strong>📁 ملفات وشيتات العمل المرفقة للتحميل المباشر:</strong><br>
+                    <div id="files-container" style="margin-top: 8px;"></div>
+                </div>
             </div>
         </div>
 
-        <!-- بوابة التحقق بالكود الفريد -->
-        <div id="portal" class="portal-box">
-            <h3>بوابة المشتركين والعملاء</h3>
-            <p style="font-size: 14px; color: var(--text-muted);">أدخل كود التفعيل الخاص بك لفتح نافذة المشاهدة وتحميل ملفات العمل</p>
-            <input type="text" id="access-code" placeholder="أدخل الكود هنا (مثال: KAREEM-101)">
-            <button class="btn-main" onclick="verifyCode()">تفعيل والدخول للمحتوى</button>
-            <div id="error-msg">الكود غير صحيح أو غير مفعل. تواصل معنا عبر واتساب للحصول على كودك.</div>
+
+        <!-- ================= القسم الثاني: الخدمات الضريبية والمحاسبية ================= -->
+        <div id="tax-services">
+            <h2 class="main-section-title">⚖️ ثانياً: قسم الخدمات الضريبية والمحاسبية</h2>
+            <h3 class="section-title">خدمات احترافية لشركتك ومنشأتك من قلب سوق العمل</h3>
+
+            <div class="grid-3">
+                <!-- الخدمة 1 -->
+                <div class="card">
+                    <div>
+                        <span class="badge">خدمة معتمدة</span>
+                        <h3>إعداد وتقديم الفواتير الإلكترونية</h3>
+                        <p style="color: var(--text-muted); font-size: 14.5px;">التسجيل بمنظومة الفاتورة والإيصال الإلكتروني، وربط أنظمة شركتك وإصدار الفواتير بدقة وتوافق تام مع مصلحة الضرائب.</p>
+                    </div>
+                    <a href="https://wa.me/201145970140?text=مرحباً%20أستاذ%20كريم،%20أرغب%20في%20طلب%20خدمة%20إعداد%20وتقديم%20الفواتير%20الإلكترونية" target="_blank" class="btn-main">اطلب الخدمة الآن</a>
+                </div>
+
+                <!-- الخدمة 2 -->
+                <div class="card">
+                    <div>
+                        <span class="badge">إقرار شهري</span>
+                        <h3>تقديم الإقرار الضريبي الشهري (نموذج 10)</h3>
+                        <p style="color: var(--text-muted); font-size: 14.5px;">مراجعة وإعداد وتقديم إقرارات القيمة المضافة ونماذج الخصم والتحصيل الشهرية في المواعيد القانونية لتجنب الغرامات.</p>
+                    </div>
+                    <a href="https://wa.me/201145970140?text=مرحباً%20أستاذ%20كريم،%20أرغب%20في%20طلب%20خدمة%20تقديم%20الإقرار%20الشهري%20نموذج%2010" target="_blank" class="btn-main">اطلب الخدمة الآن</a>
+                </div>
+
+                <!-- الخدمة 3 -->
+                <div class="card">
+                    <div>
+                        <span class="badge">إقرار سنوي</span>
+                        <h3>تقديم الإقرار الضريبي السنوي</h3>
+                        <p style="color: var(--text-muted); font-size: 14.5px;">إعداد القوائم المالية وإقرار ضريبة الدخل السنوي للشركات والأفراد وتقديمه عبر البوابة الإلكترونية باحترافية.</p>
+                    </div>
+                    <a href="https://wa.me/201145970140?text=مرحباً%20أستاذ%20كريم،%20أرغب%20في%20طلب%20خدمة%20تقديم%20الإقرار%20الضريبي%20السنوي" target="_blank" class="btn-main">اطلب الخدمة الآن</a>
+                </div>
+
+                <!-- الخدمة 4 -->
+                <div class="card">
+                    <div>
+                        <span class="badge">إدارة المستندات</span>
+                        <h3>تحميل ومتابعة الفواتير الإلكترونية</h3>
+                        <p style="color: var(--text-muted); font-size: 14.5px;">مراجعة وتحميل ومطابقة الفواتير الصادرة والواردة من على البوابة ومتابعة حالة المستندات لحظة بلحظة.</p>
+                    </div>
+                    <a href="https://wa.me/201145970140?text=مرحباً%20أستاذ%20كريم،%20أرغب%20في%20طلب%20خدمة%20تحميل%20ومتابعة%20الفواتير%20الإلكترونية" target="_blank" class="btn-main">اطلب الخدمة الآن</a>
+                </div>
+
+                <!-- الخدمة 5 -->
+                <div class="card">
+                    <div>
+                        <span class="badge">استشارات متخصصة</span>
+                        <h3>خدمات المحاسبة والاستشارات الضريبية</h3>
+                        <p style="color: var(--text-muted); font-size: 14.5px;">استشارات مالية وضريبية دورية، تأسيس الدورة المستندية، إعداد موازين المراجعة، ومواجهة الفحوصات الضريبية.</p>
+                    </div>
+                    <a href="https://wa.me/201145970140?text=مرحباً%20أستاذ%20كريم،%20أرغب%20في%20حجز%20استشارة%20محاسبية%20وضريبية" target="_blank" class="btn-main">احجز استشارتك الآن</a>
+                </div>
+
+                <!-- خدمة إضافية (أنظمة مخصصة) -->
+                <div class="card">
+                    <div>
+                        <span class="badge">أنظمة مخصصة</span>
+                        <h3>تصميم برامج Excel و Access للشركات</h3>
+                        <p style="color: var(--text-muted); font-size: 14.5px;">بناء قواعد بيانات وأنظمة حسابات ومخازن ونقل مخصصة بالكامل لتسهيل حركة العمل داخل منشأتك.</p>
+                    </div>
+                    <a href="https://wa.me/201145970140?text=مرحباً%20أستاذ%20كريم،%20أرغب%20في%20تصميم%20نظام%20محاسبي%20أو%20لوجستي" target="_blank" class="btn-main">تواصل للتنفيذ</a>
+                </div>
+            </div>
         </div>
 
-        <!-- نافذة عرض المحتوى (تظهر بعد إدخال الكود الصحيح) -->
-        <div id="protected-viewer">
-            <div class="viewer-header">
-                <h3 id="subscriber-welcome" style="margin: 0; color: var(--teal);">مرحباً بك!</h3>
-                <button onclick="closeViewer()" style="background: #EF4444; color: white; border: none; padding: 6px 14px; border-radius: 5px; cursor: pointer;">تسجيل خروج</button>
+
+        <!-- ================= القسم الثالث: آراء المتدربين والتقييمات ================= -->
+        <h2 id="reviews" class="section-title">آراء وتقييمات المتدربين والعملاء</h2>
+        <div class="reviews-grid" id="reviews-list">
+            <div class="review-item">
+                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                <p style="margin: 0; font-size: 14.5px; color: var(--text-muted);">"شرح عملي ومبسط جداً، استفدت كتير في شغلي كمحاسب خصوصاً في تصميم الدورة المستندية واليومية الأمريكية على الإكسل."</p>
+                <span class="review-author">- محاسب / أحمد عبد الرحمن</span>
             </div>
-
-            <!-- أزرار الدروس -->
-            <div class="lessons-bar" id="lessons-tabs"></div>
-
-            <!-- مشغل الفيديو المدمج -->
-            <div class="video-frame">
-                <iframe id="video-player" src="" frameborder="0" allowfullscreen></iframe>
+            <div class="review-item">
+                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                <p style="margin: 0; font-size: 14.5px; color: var(--text-muted);">"أسلوب أستاذ كريم في توصيل المعلومة ممتاز وصبور جداً في التطبيق العملي خطوة بخطوة."</p>
+                <span class="review-author">- متدربة / سارة محمود</span>
             </div>
-
-            <h3 id="current-lesson-title">عنوان الدرس</h3>
-            <p id="current-lesson-desc" style="color: var(--text-muted);"></p>
-
-            <!-- ملفات التحميل المباشر من جوجل درايف -->
-            <div class="downloads-area">
-                <strong>📁 ملفات وشيتات العمل المرفقة للتحميل المباشر:</strong><br>
-                <div id="files-container" style="margin-top: 8px;"></div>
+            <div class="review-item">
+                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                <p style="margin: 0; font-size: 14.5px; color: var(--text-muted);">"شيتات الحسابات والمخازن اللي صممها لشركتنا وفرت علينا وقت ومجهود كبير جداً."</p>
+                <span class="review-author">- أ / محمد طارق (مدير مالي)</span>
             </div>
         </div>
 
-        <!-- قسم آراء المتدربين (من هيكل صفحتك الأصلي) -->
-        <div id="feedback" class="feedback-section">
-            <h3 style="margin-top: 0; text-align: center;">شاركنا رأيك أو استفسارك</h3>
-            <form onsubmit="sendFeedback(event)">
-                <input type="text" id="fb-name" placeholder="الاسم الكريم" required>
-                <textarea id="fb-msg" rows="3" placeholder="اكتب تقييمك للدورة أو استفسارك..." required></textarea>
-                <button type="submit" class="btn-main">إرسال عبر واتساب</button>
+        <!-- نموذج إضافة رأي جديد بسهولة -->
+        <div class="feedback-section">
+            <h3 style="margin-top: 0; text-align: center;">أضف تقييمك أو رأيك في الدورات والخدمات</h3>
+            <form onsubmit="addNewReview(event)">
+                <input type="text" id="fb-name" placeholder="الاسم والوظيفة (مثال: محاسب / محمود علي)" required>
+                <select id="fb-stars">
+                    <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐ (ممتاز جداً)</option>
+                    <option value="⭐⭐⭐⭐">⭐⭐⭐⭐ (جيد جداً)</option>
+                    <option value="⭐⭐⭐">⭐⭐⭐ (جيد)</option>
+                </select>
+                <textarea id="fb-msg" rows="3" placeholder="اكتب رأيك وتجربتك هنا..." required></textarea>
+                <button type="submit" class="btn-main">نشر التقييم الآن</button>
             </form>
         </div>
 
     </div>
 
     <footer>
-        <p>© 2026 أكاديمية كريم البرديسي للتدريب المحاسبي والتقني والخدمات الضريبية</p>
+        <p>© 2026 أكاديمية كريم البرديسي للتدريب المحاسبي والتقني والخدمات الضريبية | للتواصل: 01145970140</p>
     </footer>
 
     <script>
-        // 1. التحكم في وضع الليل والنهار
         function toggleTheme() {
             const html = document.documentElement;
             const isDark = html.getAttribute("data-theme") === "dark";
@@ -508,21 +704,20 @@
             const saved = localStorage.getItem("academy_theme") || "light";
             document.documentElement.setAttribute("data-theme", saved);
             document.getElementById("themeBtn").innerText = saved === "dark" ? "☀️" : "🌙";
+            loadSavedReviews();
         });
 
-        // 2. قاعدة بيانات الأكواد المخصصة لكل متدرب أو عميل (تتحكم فيها بسهولة)
         const subscribersCodes = {
             "KAREEM-101": { name: "أحمد علي", active: true },
             "EXCEL-2026": { name: "محمود حسن", active: true },
-            "TAX-500":    { name: "سارة إبراهيم", active: false } // مثال لكود موقوف
+            "TAX-500":    { name: "سارة إبراهيم", active: false }
         };
 
-        // 3. قائمة الفيديوهات (YouTube ID) والملفات (Google Drive ID)
         const lessonsLibrary = [
             {
                 title: "الدرس الأول: تصميم الدورة المستندية للمشتريات والمخازن",
                 desc: "شرح عملي خطوة بخطوة لبناء دورة مستندية متكاملة على الإكسل وربطها بالمخازن.",
-                youtubeId: "dQw4w9WgXcQ", // ضع هنا ID فيديو يوتيوب (غير مدرج)
+                youtubeId: "dQw4w9WgXcQ",
                 files: [
                     { name: "تحميل شيت الدورة المستندية (Excel)", driveId: "1A2B3C4D5E" },
                     { name: "تحميل ملف الشرح (PDF)", driveId: "9Z8Y7X6W5V" }
@@ -600,12 +795,40 @@
             document.getElementById("access-code").value = "";
         }
 
-        function sendFeedback(e) {
+        function addNewReview(e) {
             e.preventDefault();
-            const name = document.getElementById("fb-name").value;
-            const msg = document.getElementById("fb-msg").value;
-            const text = encodeURIComponent(`مرحباً أستاذ كريم، أنا ${name}:\n${msg}`);
-            window.open(`https://wa.me/201145970140?text=${text}`, "_blank");
+            const name = document.getElementById("fb-name").value.trim();
+            const stars = document.getElementById("fb-stars").value;
+            const msg = document.getElementById("fb-msg").value.trim();
+
+            const reviewObj = { name, stars, msg };
+            
+            const savedReviews = JSON.parse(localStorage.getItem("academy_reviews") || "[]");
+            savedReviews.push(reviewObj);
+            localStorage.setItem("academy_reviews", JSON.stringify(savedReviews));
+            
+            appendReviewToDOM(reviewObj);
+            
+            document.getElementById("fb-name").value = "";
+            document.getElementById("fb-msg").value = "";
+            alert("شكراً لك! تم إضافة تقييمك بنجاح.");
+        }
+
+        function loadSavedReviews() {
+            const savedReviews = JSON.parse(localStorage.getItem("academy_reviews") || "[]");
+            savedReviews.forEach(rev => appendReviewToDOM(rev));
+        }
+
+        function appendReviewToDOM(rev) {
+            const list = document.getElementById("reviews-list");
+            const div = document.createElement("div");
+            div.className = "review-item";
+            div.innerHTML = `
+                <div class="review-stars">${rev.stars}</div>
+                <p style="margin: 0; font-size: 14.5px; color: var(--text-muted);">"${rev.msg}"</p>
+                <span class="review-author">- ${rev.name}</span>
+            `;
+            list.appendChild(div);
         }
     </script>
 </body>
