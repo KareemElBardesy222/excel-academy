@@ -814,7 +814,7 @@
                 <div id="error-msg">البريد الإلكتروني أو كود التفعيل غير صحيح!</div>
             </div>
 
-            <!-- نافذة عرض المحتوى الخاصة بالمشترك بعد التفعيل (قائمة تشغيل + نسبة إنجاز + مزامنة + ملفات) -->
+            <!-- نافذة عرض المحتوى الخاصة بالمشترك بعد التفعيل -->
             <div id="protected-viewer">
                 <div class="viewer-header">
                     <h3 id="subscriber-welcome" style="margin: 0; color: var(--teal);">مرحباً بك!</h3>
@@ -847,7 +847,7 @@
                     </div>
                 </div>
 
-                <!-- مشغل الفيديو + قائمة تشغيل الدروس -->
+                <!-- مشغل قائمة التشغيل + قائمة متابعة الدروس -->
                 <div class="playlist-layout">
                     <div>
                         <div class="video-frame" style="margin-bottom: 12px;">
@@ -855,8 +855,8 @@
                         </div>
                         <div class="lesson-meta-bar">
                             <div>
-                                <div id="current-lesson-title" style="font-weight: bold; font-size: 16px;">عنوان الدرس</div>
-                                <div id="current-lesson-info" style="font-size: 12.5px; color: var(--text-muted);">المدة: --</div>
+                                <div id="current-lesson-title" style="font-weight: bold; font-size: 16px;">قائمة التشغيل الكاملة</div>
+                                <div id="current-lesson-info" style="font-size: 12.5px; color: var(--text-muted);">قائمة يوتيوب (Unlisted)</div>
                             </div>
                             <button type="button" id="current-lesson-complete-btn" class="btn-complete-lesson" onclick="toggleCurrentLessonComplete()">تحديد كمكتمل</button>
                         </div>
@@ -874,7 +874,7 @@
             </div>
         </div>
 
-        <!-- قسم الخدمات المحاسبية والضريبية -->
+        <!-- قسم الخدمات المحاسبية والضريبية - كل خدمة كارت مستقل بزر واتساب مخصص -->
         <div id="tax-services">
             <h2 class="main-section-title">💼 ثانياً: الخدمات المحاسبية والضريبية وتصميم الأنظمة</h2>
             <h3 class="section-title">حلول عملية للشركات والأفراد</h3>
@@ -889,7 +889,7 @@
                             <li>إصدار الفواتير الإلكترونية وتسوية الحسابات.</li>
                         </ul>
                     </div>
-                    <a href="https://wa.me/201145970140?text=مرحباً%20أستاذ%20كريم،%20أرغب%20في%20الاستفسار%20عن%20الخدمات%20المحاسبية%20والضريبية" target="_blank" class="btn-main">طلب خدمة محاسبية أو ضريبية</a>
+                    <a href="https://wa.me/201145970140?text=مرحباً%20أستاذ%20كريم،%20أرغب%20في%20خدمة%20إمساك%20الدفاتر%20والإقرارات%20الضريبية" target="_blank" class="btn-main">طلب خدمة إمساك الدفاتر والضرائب</a>
                 </div>
 
                 <div class="card">
@@ -902,7 +902,7 @@
                             <li>تطوير أنظمة متابعة الحركة اليومية والحسابات الجارية.</li>
                         </ul>
                     </div>
-                    <a href="https://wa.me/201145970140?text=مرحباً%20أستاذ%20كريم،%20أرغب%20في%20تصميم%20نظام%20محاسبي%20أو%20شيت%20Excel" target="_blank" class="btn-main">طلب تصميم نظام أو شيت</a>
+                    <a href="https://wa.me/201145970140?text=مرحباً%20أستاذ%20كريم،%20أرغب%20في%20خدمة%20تصميم%20شيتات%20Excel%20وقواعد%20بيانات%20Access" target="_blank" class="btn-main">طلب تصميم شيت Excel أو قاعدة Access</a>
                 </div>
 
                 <div class="card">
@@ -915,7 +915,7 @@
                             <li>مراجعة وتصحيح أرصدة وحسابات قائمة.</li>
                         </ul>
                     </div>
-                    <a href="https://wa.me/201145970140?text=مرحباً%20أستاذ%20كريم،%20أرغب%20في%20حجز%20استشارة%20مهنية" target="_blank" class="btn-main">حجز استشارة عبر واتساب</a>
+                    <a href="https://wa.me/201145970140?text=مرحباً%20أستاذ%20كريم،%20أرغب%20في%20خدمة%20الاستشارات%20المهنية%20والتدريب%20الفردي" target="_blank" class="btn-main">طلب استشارة مهنية أو تدريب فردي</a>
                 </div>
             </div>
         </div>
@@ -974,6 +974,43 @@
     </footer>
 
     <script>
+        // 1) ضع هنا رابط Google Apps Script Web App الخاص بربط Google Sheet للتقييمات والمزامنة
+        const SHEET_WEB_APP_URL = "";
+
+        // 2) قائمة إيميلات وأكواد التفعيل للطلاب بصيغة KB-XXXX
+        const VALID_SUBSCRIBERS = {
+            "student.a1@academy.com": "KB-7942XF",
+            "student.a2@academy.com": "KB-3819MR",
+            "student.a3@academy.com": "KB-6405HT",
+            "student.a4@academy.com": "KB-9127DL",
+            "student.a5@academy.com": "KB-5284YN",
+            "student.a6@academy.com": "KB-8361PK",
+            "student.a7@academy.com": "KB-4708SW",
+            "student.a8@academy.com": "KB-1953QZ",
+            "student.a9@academy.com": "KB-7620BC",
+            "student.a10@academy.com": "KB-2846GJ",
+            "student.a11@academy.com": "KB-6194VE",
+            "student.a12@academy.com": "KB-9502TR",
+            "student.a13@academy.com": "KB-3471NM",
+            "student.a14@academy.com": "KB-8065LP",
+            "student.a15@academy.com": "KB-5739WD",
+            "student.a16@academy.com": "KB-1286HF",
+            "student.a17@academy.com": "KB-6940AK",
+            "student.a18@academy.com": "KB-4157ZY",
+            "student.a19@academy.com": "KB-8823CX",
+            "student.a20@academy.com": "KB-2398QM"
+        };
+
+        // 3) تشغيل قائمة التشغيل الكاملة (Playlist) من YouTube
+        const PLAYLIST_ID = "PLWJF0bZDTAKw";
+        const PLAYLIST_EMBED_URL = `https://www.youtube.com/embed/videoseries?list=${PLAYLIST_ID}`;
+
+        const courseLessons = [
+            { id: 'l1', title: 'المحاضرة 1', duration: 'قائمة التشغيل (Playlist)', url: PLAYLIST_EMBED_URL },
+            { id: 'l2', title: 'المحاضرة 2', duration: 'قائمة التشغيل (Playlist)', url: PLAYLIST_EMBED_URL },
+            { id: 'l3', title: 'المحاضرة 3', duration: 'قائمة التشغيل (Playlist)', url: PLAYLIST_EMBED_URL }
+        ];
+
         function toggleTheme() {
             const root = document.documentElement;
             const current = root.getAttribute('data-theme');
@@ -1010,13 +1047,6 @@
         function goToPortal() {
             document.getElementById('portal').scrollIntoView({ behavior: 'smooth' });
         }
-
-        // استبدل عناصر courseLessons بفيديوهات قائمة التشغيل الخاصة بك
-        const courseLessons = [
-            { id: 'l1', title: 'المحاضرة 1: الأساسيات والتهيئة العملية', duration: '25 دقيقة', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
-            { id: 'l2', title: 'المحاضرة 2: الدوال والعمليات المحاسبية', duration: '35 دقيقة', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
-            { id: 'l3', title: 'المحاضرة 3: التقارير والتطبيق العملي', duration: '30 دقيقة', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' }
-        ];
 
         let currentLessonIndex = 0;
         let completedLessons = JSON.parse(localStorage.getItem('completed_lessons') || '[]');
@@ -1058,8 +1088,8 @@
             const lesson = courseLessons[currentLessonIndex];
             if (!lesson) return;
             document.getElementById('course-lesson-frame').src = lesson.url;
-            document.getElementById('current-lesson-title').textContent = lesson.title;
-            document.getElementById('current-lesson-info').textContent = `المدة: ${lesson.duration}`;
+            document.getElementById('current-lesson-title').textContent = `${lesson.title} — قائمة التشغيل`;
+            document.getElementById('current-lesson-info').textContent = `معرّف القائمة: ${PLAYLIST_ID}`;
 
             const btn = document.getElementById('current-lesson-complete-btn');
             const isDone = completedLessons.includes(lesson.id);
@@ -1092,7 +1122,7 @@
             document.getElementById('progress-bar-fill').style.width = `${pct}%`;
         }
 
-        function syncProgressFromCloud() {
+        async function syncProgressFromCloud() {
             const key = document.getElementById('student-sync-key').value.trim();
             const statusEl = document.getElementById('sync-status-text');
             if (!key) {
@@ -1100,20 +1130,40 @@
                 return;
             }
             localStorage.setItem('sync_key_' + key, JSON.stringify(completedLessons));
-            statusEl.textContent = `— تم حفظ ومزامنة التقدم (${key})`;
+
+            if (SHEET_WEB_APP_URL) {
+                try {
+                    await fetch(SHEET_WEB_APP_URL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ action: 'sync_progress', key, completedLessons })
+                    });
+                    statusEl.textContent = `— تمت المزامنة مع الشيت (${key})`;
+                    return;
+                } catch (err) {
+                    statusEl.textContent = `— تم الحفظ محلياً (${key}) وتعذر الاتصال بالشيت`;
+                    return;
+                }
+            }
+            statusEl.textContent = `— تم الحفظ محلياً (${key}) - أضف رابط الشيت للمزامنة السحابية`;
         }
 
         function verifyCode() {
-            const email = document.getElementById('user-email').value.trim();
+            const email = document.getElementById('user-email').value.trim().toLowerCase();
             const code = document.getElementById('access-code').value.trim();
             const errorMsg = document.getElementById('error-msg');
 
-            if (!email || !code) {
+            const expectedCode = VALID_SUBSCRIBERS[email];
+            if (!email || !code || !expectedCode || expectedCode !== code) {
                 errorMsg.style.display = 'block';
                 return;
             }
 
             errorMsg.style.display = 'none';
+            if (document.getElementById('remember-me').checked) {
+                localStorage.setItem('remembered_subscriber', JSON.stringify({ email, code }));
+            }
             document.getElementById('subscriber-welcome').textContent = `مرحباً بك: ${email}`;
             document.getElementById('protected-viewer').style.display = 'block';
             renderCoursePlaylist();
@@ -1124,36 +1174,52 @@
             document.getElementById('protected-viewer').style.display = 'none';
         }
 
-        const initialReviews = [
-            { name: 'محمود عبد الله', rating: 5, comment: 'شرح عملي ومباشر جداً يربط الدوال والأدوات بشغل الحسابات اليومي.' },
-            { name: 'سارة حسن', rating: 5, comment: 'التطبيقات العملية ساعدتني أرتب الشيتات وأقلل أخطاء الإدخال بشكل ملحوظ.' }
-        ];
-
-        function renderReviews() {
-            const list = JSON.parse(localStorage.getItem('academy_reviews') || 'null') || initialReviews;
+        function drawReviewsList(list) {
             const box = document.getElementById('reviews-container');
-            if (!list.length) {
-                box.innerHTML = '<div class="no-reviews-msg">لا توجد تقييمات بعد. كن أول من يشارك رأيه.</div>';
+            if (!list || !list.length) {
+                box.innerHTML = '<div class="no-reviews-msg">لا توجد تقييمات مسجلة بعد.</div>';
                 return;
             }
             box.innerHTML = list.map(r => `
                 <div class="review-item">
-                    <div class="review-stars">${'⭐'.repeat(r.rating)}</div>
+                    <div class="review-stars">${'⭐'.repeat(Math.min(5, Math.max(1, parseInt(r.rating, 10) || 5)))}</div>
                     <p style="margin: 0;">${r.comment}</p>
                     <span class="review-author">${r.name}</span>
                 </div>
             `).join('');
         }
 
-        function addReview() {
+        async function renderReviews() {
+            if (!SHEET_WEB_APP_URL) {
+                drawReviewsList([]);
+                return;
+            }
+            try {
+                const res = await fetch(`${SHEET_WEB_APP_URL}?action=get_reviews`);
+                const data = await res.json();
+                const items = Array.isArray(data) ? data : (data.reviews || []);
+                drawReviewsList(items);
+            } catch (err) {
+                drawReviewsList([]);
+            }
+        }
+
+        async function addReview() {
             const name = document.getElementById('reviewer-name').value.trim();
             const rating = parseInt(document.getElementById('reviewer-rating').value, 10);
             const comment = document.getElementById('reviewer-comment').value.trim();
             if (!name || !comment) return;
 
-            const list = JSON.parse(localStorage.getItem('academy_reviews') || 'null') || initialReviews;
-            list.unshift({ name, rating, comment });
-            localStorage.setItem('academy_reviews', JSON.stringify(list));
+            if (SHEET_WEB_APP_URL) {
+                try {
+                    await fetch(SHEET_WEB_APP_URL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ action: 'add_review', name, rating, comment })
+                    });
+                } catch (err) {}
+            }
 
             document.getElementById('reviewer-name').value = '';
             document.getElementById('reviewer-comment').value = '';
