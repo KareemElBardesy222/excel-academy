@@ -1403,7 +1403,7 @@
         const PLAYLIST_EMBED_URL = `https://www.youtube.com/embed/videoseries?list=${PLAYLIST_ID}`;
 
         // 4) رابط ملفات التطبيق العملي على Google Drive (استبدل الرابط برابطك)
-        const COURSE_MATERIALS_URL = "https://drive.google.com/drive/folders/ضع_رابط_ملفات_الكورس_هنا";
+        const COURSE_MATERIALS_URL = "https://drive.google.com/drive/folders/1wM2a72s7gLoeB5e9gmyLoHxvicLONEYh?usp=drive_link";
 
         const courseLessons = [
             { id: 'l1', title: 'المحاضرة 1', duration: 'قائمة التشغيل (Playlist)', url: PLAYLIST_EMBED_URL },
@@ -1624,13 +1624,14 @@
 
             document.getElementById('reviewer-name').value = '';
             document.getElementById('reviewer-comment').value = '';
-            renderReviews();
-        }
-
-        const materialsLinkEl = document.getElementById('materials-download-link');
+            const materialsLinkEl = document.getElementById('materials-download-link');
         if (materialsLinkEl) materialsLinkEl.href = COURSE_MATERIALS_URL;
+
+        renderReviews();
+        }
 
         renderReviews();
     </script>
 </body>
 </html>
+```[cite: 10]
